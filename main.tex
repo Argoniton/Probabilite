@@ -1,0 +1,224 @@
+\section{Espase Probabilisé} % (fold)
+\label{sec:course_1}
+
+% section course_1 (end)
+Soit $\Omega$ est \textsc{Univers} (est random ensemble).
+
+\begin{definition}{\emph{$\sigma$ - algebra}}
+	
+	La famille des ensembles $\mathcal{A}$ s'appelle \textsc{$\sigma$-Algebra} si:
+	\begin{enumerate}
+		\item $\Omega\in \mathcal{A}$
+		\item Pour tout $A\in \mathcal{A}$, $A^c\in \mathcal{A}$ ($A^C=\bar{A}$)
+		\item Si $\{A_k\}^\infty_{k=1}\in \mathcal{A}:\ \cup^\infty_{k=1}A_k\in\mathcal{A}$
+	\end{enumerate} 
+\end{definition}
+
+
+\begin{definition}{\emph{Probabilité}}
+	\begin{enumerate}
+		\item $\mathbb{P}(\Omega)=1$
+		\item Si $\{A_k\}_k^\infty$ - disjoint (pour tout $i\neq j:\ A_i\cup A_j = \emptyset$):
+		$$\mathbb{P}(\cup^\infty_{k=1}A_k)=\sum^\infty_{k=1}\mathbb{P}(A_k)$$
+	\end{enumerate}
+\end{definition}
+
+Espasce probabilisable $( \underbrace{\Omega}_\text{univers},\ 
+\underbrace{ \mathcal{A} }_\text{tribu} )$.
+
+Espase probabillisé $(\Omega,\ \mathcal{A},\ \mathbb{P})$.
+
+\textsc{Variable Aléatoire} (random variable) est fonction measurable $X$: $$X:\Omega\rightarrow\mathbb{R}$$
+
+\begin{diagram}
+\Omega & \rTo^X & \mathbb{R} \\
+\dTo<{\sigma\text{-algebre}} &  & \dTo>{\sigma\text{-algebre}} \\ 
+\mathcal{A} &  &  \mathcal{B}\text{ (Borel)}
+\end{diagram}
+
+Soit $\Omega$ un ensemble. Soit $\mathcal{F}$ un famille d'ensembles de $\Omega$, qui n'est pas forcément une $\sigma$-algebre.
+
+\begin{definition}
+	On appelle $\sigma$-algebr engendrée par $\mathcal{F}$, denotée $\sigma(\mathcal{F})$ la plus petite $\sigma$-algebre que contient $\mathcal{F}$.
+\end{definition}
+
+\begin{definition}
+	Borel ($\mathcal{B}$) est la $\sigma$-algebre engendrée par les intervalles ouvertes de $\mathbb{R}$ c'est-â-dire de la forme $(a,\ b),\ |a|,\ |b| < \infty$ (famile $\mathcal{F}_0$).
+\end{definition}
+
+On dit Borel ($\mathcal{B}$) est aussi $\sigma$-algebre engendrée par des intervalles de la forme $(-\infty,\ |a|],\ |a|<\infty$ (famile $\mathcal{F}_{FN}$).
+
+\begin{remark}
+	$\sigma(\mathcal{F}_0)=\sigma(\mathcal{F}_{FN})$
+\end{remark}
+
+\begin{proposition}
+	Pour verifier la measurable il suffit de la tester sur une famile qui engendrée la $\sigma$-algebre de Borele.
+\end{proposition}
+
+\emph{Exercice}. (simple mais important)\\
+Soit $\Omega$ un ensemble. $\mathcal{P}= \{P_1,\ P_2,\,...\,,\ P_k\}$ est une partition finit de $\Omega$, c'est-â-dire $\cup_{j=1}^k P_j=\Omega$ et $P_\alpha\cap P_\beta=\varnothing$.
+
+\begin{enumerate}
+	\item Trouve $\sigma(\mathcal{P})$.\\Réponse:
+	
+$\sigma(\mathcal{P})$ contient tout reunion d'elementes $\mathcal{P}$.\\
+(En partiqulier si $A\in\sigma(\mathcal{P})$: $A=\cup_{k=1}^l P_{i_k}$)
+	\item Trouve commont sont faites les v.a. par rapport â $\sigma{\mathcal{P}}$.\\Réponse:
+	
+	Consider $\Omega=\mathbb{R}$. $X(\omega)=\alpha$. $\alpha$ est l'image $\omega$. Le point  $\alpha$ est aussi un ensemble, qu'on denote $\{\alpha\}$: "singlitore" qui est un borelien. Car $X$ est measurable par rapport â $\sigma(\mathcal{P})$, $X^{-1}(\{\alpha\})=\cup P_{i_k}$.
+	
+	Une function measurable pour rapport à $\sigma(\mathcal{P})$ est constante par morceaux sr les éléments de la partition. 
+	
+	On replace $X$ avec autre object qui "approxime" $X$ est measurable par rapport â $\sigma(\mathcal{P})$.
+\end{enumerate}
+
+Espase probabilisé $(\Omega,\ \mathcal{A},\ \mathbb{P})$. $X:\Omega\rightarrow\underbrace{\mathbb{R}}_\text{Borel}$,  $X$ est v.a. 
+
+Loi de $X$ on définir un mesure de probabilite sur ($\mathbb{R},\ \mathcal{B}$) de la maniere sivante si $B\in\mathcal{B}$: $P_X(B)=\mathbb{P}(X^{-1}(B))$.
+
+On appelle $P_X$ de \textsc{La Loi de $X$}.
+
+$X:\Omega\rightarrow\mathbb{R}$ On pourra écrite $X$ de la maniere suivante: $X(\omega)=\sum_{k=1}^\infty x_k \mathbb{1}_{A_k}(\omega)$, $A_k=\{\omega\, |\, X(\omega)\in A_k\}$. Calculer $P_X$ (la loi de $X$):
+
+Si $B\in\mathcal{F}$, $P_X(B) = \mathbb{P}(X^{-1}(B))$.
+
+On appelle $D$ l'ensemble valiur de $X$: $D=\{x_1,\ X_2,\, ...\,x_k\, ...\}$.
+
+$P_X(B)=P_X(B\cap D)=P_X(B\cap \cup_{k=1}^\infty\{x_k\})=P_X(\cup_{k=1}^\infty(B\cap \{x_k\}))=\sum_{k=1}^\infty P_X(B\cap \{x_k\})=\sum_{k=1}^\infty \mathbb{P}(X=x_k)\delta_{\{x_k\}}(B)=\sum_{k=1}^\infty p_k \delta_{\{x_k\}}(B)$
+
+$$\delta_a(B)=\left\{
+\begin{array}{rl}
+	1 & \mbox{ si } a\in B \\ 
+	0 & \mbox{ si } a\notin B
+\end{array}\right.$$
+
+On introduit la measure de Dirrac:
+
+$$\left. \begin{array}{rrl}
+	X & = &\sum\limits_{k=1}^\infty x_k \mathbb{1}_{A_k}\\ 
+	P_x & = & \sum\limits_{k=1}^\infty p_k \delta_{\{x_k\}}\\
+	P_x & = & \mathbb{P}(A_k)
+\end{array}\right\}\text{ v.a. discrete}$$
+
+Exemple. (v.a. discrete)
+\begin{enumerate}
+	
+	\item $B(n,\ p)$ dinomiale\\
+Valeurs: $X=\{0,\ 1,\,...\, n\}$.
+$$P_k=\mathbb{P}(X=k)=C_n^k p^k (1-p)^{n-k},\ i\in\{0,\, ...\,, n\}$$
+	\item Poisson $P(\lambda)$. Valeurs $X=\{0,\ 1,\ 2,\, ...\,\}$ - dénombrable.
+	
+	$$P_X(\{k\})=\mathbb{P}(X=k)=\frac{e^{-\lambda}\lambda^k}{k!}$$ 
+\end{enumerate}
+
+\underline{Independances}
+
+Si $X$ et $Y$ sond independantes
+$$P_{XY}(x\in A, Y\in B)=P_X(A) P_X(B)$$
+
+Produit direct de deux measure?
+
+Considere $S=S_1\times S_2$.
+
+Defiltat
+
+Di ou construit l'espase measurable $(S_1\times S_2,\ \mathcal{A}_1\times\mathcal{A}_2)$
+
+Il existe une seule measure $\bar{\nu}$ telle que:
+$$\bar{\mu}(A_1\times A_2)=\mu_1(A_1)\mu_2{A_2}$$
+
+Cette measure $\bar{\mu}$ est le produit direct de $\mu_1$ et $\mu_1$, denote $\bar{\mu}\mu_1\times\mu_1$.
+
+C'est-â-dire:
+$$P_{XY}=P_X\times P_Y$$ % put in box.
+
+Ex
+$$\int\limits_{\mathbb{R}} f(t,u) \dif P_{XY}(t, u)\mu$$
+
+On a besoin d'une autre quantiti; fouction de repartition de deux variables.
+
+\begin{definition}
+	Si $X$ et $Y$ sont 2 v.a. ou definit
+	$$F_{xy}(u,\ v)=\mathbb{P}(X\leq u, Y\leq v)$$
+\end{definition}
+
+\begin{proposition}
+	Si ou connait la founction de repartition du couple $(X,Y)$ on peut calculer les fouctions de repartition marginales
+	$$F_X(u)=\lim\limits_{v\rightarrow +\infty}F_{XY}(u, v)$$
+	$$F_Y(v)=\lim\limits_{u\rightarrow +\infty}F_{XY}(u, v)$$
+\end{proposition}
+\begin{proof}
+	$F_X(u)=\mathbb{P}(X\leq u)=P_X((-\infty, u])$. Utilize $\mathbb{R}=\cup^\infty_{k=1}(-\infty, k]$ $(-\infty, k)$ est croissant. $\mathbb{P}(X\leq u)=\mathbb{P}(X\leq u, Y\in\mathbb{R})=\mathbb{P}(X\leq u, Y\in\cup_{k=1}^\infty(-\infty, k])$. $F_X(u)=\mathbb{P}(X\leq u)=P_X((-\infty, u])$.
+\end{proof}
+
+\begin{proposition}
+	Si $X$ est $Y$ sont independant v.a. donc $F_{XY}(u, v)=F_x(U) F_Y(V)$
+\end{proposition}
+\begin{proof}
+	...
+\end{proof}
+
+\begin{proposition}	
+	Si on a: $F_{XY}=(u, v)=F_X(u)F_Y(v)$ cest-a que $X$ et $Y$ sont independante? Oui.
+\end{proposition}
+\begin{proof}
+	$$P_{XY}(X\leq u, Y\leq v)=P_X(X\leq u)P_Y(Y\leq u)$$
+	la borelien de la forme $\{(-\infty, u], |u|<\infty\}$ verifiet le properte de l'intersection firme.
+\end{proof}
+
+\begin{definition}
+	La measure de lebegue dans $\mathbb{R}^2$ est la measure droduit direct des measure des lebesgue dans $\mathbb{R}$.
+\end{definition}
+
+Convention $\int f\dif \lambda(x)=\int f \dif x$.
+
+\begin{definition}
+	Un couple de v.a $(X, Y)$ a une loi conjointe $P_{XY}$ a density si pour toute borelie $B\in\mathcal{B}^{(2)}$ ($\sigma$-algebre produite), on a
+	$$P_{XY}(B)=\iint\limits_{B}f_{XY}(u, v)\dif\lambda(u)\dif\lambda(v)$$. En particulier s ou a $g(u,v)\in L^1(P_{XY})$ on a:
+	$$\iint\limits_{\mathbb{R}^2}g(u, v)\dif P_{XY}(u, v)=\iint g(u,v) f_{XY}(u, v)\dif \lambda(u) \dif \lambda(v)$$
+\end{definition}
+
+Questions
+\begin{enumerate}
+	\item Donnet les proprieties de $f_{XY}$ quand $X$ et $Y$ sont independents.
+	\item Si on connait $F_{XY}(u, v)$ est-ce qu'on peut calculer les marginales $f_X(u),\ f_Y{v}$?
+\end{enumerate}
+
+\begin{proposition}{generale}
+	Si on connait $f_{XY}(u, v)$ on a:
+	$\begin{array}{rrl}f_X(u) & = & \int_\mathbb{R}F_{XY}(u,v)\dif v\\ f_X(v) & = & \int_\mathbb{R}F_{XY}(u,v)\dif u\end{array}$
+\end{proposition}
+\begin{proof}
+	$F_X(t)=\lim\limits_{r\rightarrow\infty}F_{XY}(t, r)|=|$\\
+	$$F_{XY}(t,r)=\mathbb{P}(X\leq t, Y\leq r)=P_{XY}((-\infty, t]\times(-\infty, r])=\iint_{-\infty -\infty}^{t\ r}\dif \lambda(u) \dif \lambda(v)=F_{XY}(t,r)$$
+	$|=|\lim\limits_{r\rightarrow\infty}\iint_{-\infty -\infty}^{t\ r} f_{XY}(u, v)\dif \lambda(u) \dif \lambda(v)=\lim\limits_{r\rightarrow\infty}\iint_{-\infty -\infty}^{t\ r} f_{XY}(u, v)\mathbb{1}(u)\mathbb{1}(v)\dif \lambda(u) \dif \lambda(v)=$\\
+	\text{| Par Fubini ou sont itirer les integrales: |}\\
+	$=\lim\limits_{r\rightarrow\infty}\int_{\mathbb{R}} \dif u \int_{\mathbb{R}} \dif v \mathbb{1}(u)\mathbb{1}(v) f_{XY}(u, v)$
+	$=\lim\limits_{r\rightarrow\infty}\int_{-\infty}^t \dif u \int_{-\infty}^r \dif v  f_{XY}(u, v) =|\text{B. Levi}|=
+	=\int_{\mathbb{R}} \dif u \lim\limits_{r\rightarrow\infty} \int_{\mathbb{R}} \dif v \mathbb{1}(u)\mathbb{1} f_{XY}(u, v)$
+	$F_X(t)=\int_{\mathbb{R}} \dif u \int_{\mathbb{R}} \dif v \mathbb{1}(u)\mathbb{1} f_{XY}(u, v)$.
+	
+	Si $X$ est à densite $F_X(T) = \int\limits_{-\infty}^t f_X(u) \dif u$.
+\end{proof}
+
+\underline{Question} (Independantes et densités)
+\begin{proposition}
+	Ou a deux parties.
+	\begin{enumerate}
+		\item Si 2 v.a. $X$ et $Y$ admetteit, des densitis $f_X$ et $f_Y$ admetteut des densitis $f_X$ et $f_y$ et $X$ et $Y$ sont independantes, alors le couple (X, Y) ament une loi conjointe a densité et $f_{XY}=f_X f_Y$.
+		\item Si le couple $(X, Y)$ adment une densite $f_{XY}$ produit de deux fouctions integrable $f_1$ et $f_2$ alors $f_1$ et $f_2$ sont les densities (à une constant pvit) de $X$ et $Y$ et $X$ et $Y$ sont indipendantes.
+	\end{enumerate}
+\end{proposition}
+
+\underline{Exercise}
+On a un couple de v.a. $(X, Y)$ à valuers dans $\mathbb{R}^2$ de loi conjointe:
+$$P_{(XY)}(B)=\sum_{k=1}^\infty\sum_{l=1}^\infty \frac{1}{2^{k+l}}\delta_{\{k, l\}}(B)$$
+Determiner la loi de $Z=\sup \{X, Y\}$.
+\begin{enumerate}
+	\item{question}. Determiner $P_X,\ P_Y$ oui $P_X(X=k)$.
+Si $X$ et $Y$ sont discrette $\mathbb{P}(X=k)=\sum\limits_j\mathbb{P}(X=k,\ Y=j)$. $$P_X(\{x\}=\sum\limits_j P_{XY}(\{k, j\})$$
+$$\mathbb{P}(X=k)=P_X(\{k\})=\sum\limits_{j=1}^\infty \frac{1}{2^{k+j}}$$
+$\mathbb{P}(Z\leq k)=\mathbb{P}(X\leq k, Y\leq k)=\int \mathbb{1}_{[0, k]^2}(X, Y)\dif \mathbb{P}=\iint \mathbb{1}_{[0, k]^2} \dif P_{XY}(u, v)=\sum\limits_{i,l=1}^\infty \frac{1}{2^{i+l}}\mathbb{1}_{[1, k]^2}(i, l)=\sum\limits_{i=1}^k\sum\limits_{l=1}^k\frac{1}{2^{i+l}}$
+$\mathbb$
+\end{enumerate}
