@@ -17,16 +17,16 @@ Soit $\Omega$ est \textsc{Univers} (est random ensemble).
 
 \begin{definition}{\emph{Probabilité}}
 	\begin{enumerate}
-		\item $\mathbb{P}(\Omega)=1$
+		\item $\pro (\Omega)=1$
 		\item Si $\{A_k\}_k^\infty$ - disjoint (pour tout $i\neq j:\ A_i\cup A_j = \emptyset$):
-		$$\mathbb{P}(\cup^\infty_{k=1}A_k)=\sum^\infty_{k=1}\mathbb{P}(A_k)$$
+		$$\pro (\cup^\infty_{k=1}A_k)=\sum^\infty_{k=1}\pro (A_k)$$
 	\end{enumerate}
 \end{definition}
 
 Espasce probabilisable $( \underbrace{\Omega}_\text{univers},\ 
 \underbrace{ \mathcal{A} }_\text{tribu} )$.
 
-Espase probabillisé $(\Omega,\ \mathcal{A},\ \mathbb{P})$.
+Espase probabillisé $(\Omega,\ \mathcal{A},\ \pro )$.
 
 \textsc{Variable Aléatoire} (random variable) est fonction measurable $X$: $$X:\Omega\rightarrow\mathbb{R}$$
 
@@ -73,19 +73,19 @@ $\sigma(\mathcal{P})$ contient tout reunion d'elementes $\mathcal{P}$.\\
 	On replace $X$ avec autre object qui "approxime" $X$ est measurable par rapport â $\sigma(\mathcal{P})$.
 \end{enumerate}
 
-Espase probabilisé $(\Omega,\ \mathcal{A},\ \mathbb{P})$. $X:\Omega\rightarrow\underbrace{\mathbb{R}}_\text{Borel}$,  $X$ est v.a. 
+Espase probabilisé $(\Omega,\ \mathcal{A},\ \pro )$. $X:\Omega\rightarrow\underbrace{\mathbb{R}}_\text{Borel}$,  $X$ est v.a. 
 
-Loi de $X$ on définir un mesure de probabilite sur ($\mathbb{R},\ \mathcal{B}$) de la maniere sivante si $B\in\mathcal{B}$: $P_X(B)=\mathbb{P}(X^{-1}(B))$.
+Loi de $X$ on définir un mesure de probabilite sur ($\mathbb{R},\ \mathcal{B}$) de la maniere sivante si $B\in\mathcal{B}$: $P_X(B)=\pro (X^{-1}(B))$.
 
 On appelle $P_X$ de \textsc{La Loi de $X$}.
 
-$X:\Omega\rightarrow\mathbb{R}$ On pourra écrite $X$ de la maniere suivante: $X(\omega)=\sum_{k=1}^\infty x_k \mathbb{1}_{A_k}(\omega)$, $A_k=\{\omega\, |\, X(\omega)\in A_k\}$. Calculer $P_X$ (la loi de $X$):
+$X:\Omega\rightarrow\mathbb{R}$ On pourra écrite $X$ de la maniere suivante: $X(\omega)=\sum_{k=1}^\infty x_k \ind _{A_k}(\omega)$, $A_k=\{\omega\, |\, X(\omega)\in A_k\}$. Calculer $P_X$ (la loi de $X$):
 
-Si $B\in\mathcal{F}$, $P_X(B) = \mathbb{P}(X^{-1}(B))$.
+Si $B\in\mathcal{F}$, $P_X(B) = \pro (X^{-1}(B))$.
 
 On appelle $D$ l'ensemble valiur de $X$: $D=\{x_1,\ X_2,\, ...\,x_k\, ...\}$.
 
-$P_X(B)=P_X(B\cap D)=P_X(B\cap \cup_{k=1}^\infty\{x_k\})=P_X(\cup_{k=1}^\infty(B\cap \{x_k\}))=\sum_{k=1}^\infty P_X(B\cap \{x_k\})=\sum_{k=1}^\infty \mathbb{P}(X=x_k)\delta_{\{x_k\}}(B)=\sum_{k=1}^\infty p_k \delta_{\{x_k\}}(B)$
+$P_X(B)=P_X(B\cap D)=P_X(B\cap \cup_{k=1}^\infty\{x_k\})=P_X(\cup_{k=1}^\infty(B\cap \{x_k\}))=\sum_{k=1}^\infty P_X(B\cap \{x_k\})=\sum_{k=1}^\infty \pro (X=x_k)\delta_{\{x_k\}}(B)=\sum_{k=1}^\infty p_k \delta_{\{x_k\}}(B)$
 
 $$\delta_a(B)=\left\{
 \begin{array}{rl}
@@ -96,9 +96,9 @@ $$\delta_a(B)=\left\{
 On introduit la measure de Dirrac:
 
 $$\left. \begin{array}{rrl}
-	X & = &\sum\limits_{k=1}^\infty x_k \mathbb{1}_{A_k}\\ 
+	X & = &\sum\limits_{k=1}^\infty x_k \ind _{A_k}\\ 
 	P_x & = & \sum\limits_{k=1}^\infty p_k \delta_{\{x_k\}}\\
-	P_x & = & \mathbb{P}(A_k)
+	P_x & = & \pro (A_k)
 \end{array}\right\}\text{ v.a. discrete}$$
 
 Exemple. (v.a. discrete)
@@ -106,10 +106,10 @@ Exemple. (v.a. discrete)
 	
 	\item $B(n,\ p)$ dinomiale\\
 Valeurs: $X=\{0,\ 1,\,...\, n\}$.
-$$P_k=\mathbb{P}(X=k)=C_n^k p^k (1-p)^{n-k},\ i\in\{0,\, ...\,, n\}$$
+$$P_k=\pro (X=k)=C_n^k p^k (1-p)^{n-k},\ i\in\{0,\, ...\,, n\}$$
 	\item Poisson $P(\lambda)$. Valeurs $X=\{0,\ 1,\ 2,\, ...\,\}$ - dénombrable.
 	
-	$$P_X(\{k\})=\mathbb{P}(X=k)=\frac{e^{-\lambda}\lambda^k}{k!}$$ 
+	$$P_X(\{k\})=\pro (X=k)=\frac{e^{-\lambda}\lambda^k}{k!}$$ 
 \end{enumerate}
 
 \underline{Independances}
@@ -140,7 +140,7 @@ On a besoin d'une autre quantiti; fouction de repartition de deux variables.
 
 \begin{definition}
 	Si $X$ et $Y$ sont 2 v.a. ou definit
-	$$F_{xy}(u,\ v)=\mathbb{P}(X\leq u, Y\leq v)$$
+	$$F_{xy}(u,\ v)=\pro (X\leq u, Y\leq v)$$
 \end{definition}
 
 \begin{proposition}
@@ -149,7 +149,7 @@ On a besoin d'une autre quantiti; fouction de repartition de deux variables.
 	$$F_Y(v)=\lim\limits_{u\rightarrow +\infty}F_{XY}(u, v)$$
 \end{proposition}
 \begin{proof}
-	$F_X(u)=\mathbb{P}(X\leq u)=P_X((-\infty, u])$. Utilize $\mathbb{R}=\cup^\infty_{k=1}(-\infty, k]$ $(-\infty, k)$ est croissant. $\mathbb{P}(X\leq u)=\mathbb{P}(X\leq u, Y\in\mathbb{R})=\mathbb{P}(X\leq u, Y\in\cup_{k=1}^\infty(-\infty, k])$. $F_X(u)=\mathbb{P}(X\leq u)=P_X((-\infty, u])$.
+	$F_X(u)=\pro (X\leq u)=P_X((-\infty, u])$. Utilize $\mathbb{R}=\cup^\infty_{k=1}(-\infty, k]$ $(-\infty, k)$ est croissant. $\pro (X\leq u)=\pro (X\leq u, Y\in\mathbb{R})=\pro (X\leq u, Y\in\cup_{k=1}^\infty(-\infty, k])$. $F_X(u)=\pro (X\leq u)=P_X((-\infty, u])$.
 \end{proof}
 
 \begin{proposition}
@@ -191,13 +191,13 @@ Questions
 \end{proposition}
 \begin{proof}
 	$F_X(t)=\lim\limits_{r\rightarrow\infty}F_{XY}(t, r)|=|$\\
-	$$F_{XY}(t,r)=\mathbb{P}(X\leq t, Y\leq r)=P_{XY}((-\infty, t]\times(-\infty, r])=\iint_{-\infty -\infty}^{t\ r}\dif \lambda(u) \dif \lambda(v)=F_{XY}(t,r)$$
-	$|=|\lim\limits_{r\rightarrow\infty}\iint_{-\infty -\infty}^{t\ r} f_{XY}(u, v)\dif \lambda(u) \dif \lambda(v)=\lim\limits_{r\rightarrow\infty}\iint_{-\infty -\infty}^{t\ r} f_{XY}(u, v)\mathbb{1}(u)\mathbb{1}(v)\dif \lambda(u) \dif \lambda(v)=$\\
+	$$F_{XY}(t,r)=\pro (X\leq t, Y\leq r)=P_{XY}((-\infty, t]\times(-\infty, r])=\iint_{-\infty -\infty}^{t\ r}\dif \lambda(u) \dif \lambda(v)=F_{XY}(t,r)$$
+	$|=|\lim\limits_{r\rightarrow\infty}\iint_{-\infty -\infty}^{t\ r} f_{XY}(u, v)\dif \lambda(u) \dif \lambda(v)=\lim\limits_{r\rightarrow\infty}\iint_{-\infty -\infty}^{t\ r} f_{XY}(u, v)\ind (u)\ind (v)\dif \lambda(u) \dif \lambda(v)=$\\
 	\text{| Par Fubini ou sont itirer les integrales: |}\\
-	$=\lim\limits_{r\rightarrow\infty}\int_{\mathbb{R}} \dif u \int_{\mathbb{R}} \dif v \mathbb{1}(u)\mathbb{1}(v) f_{XY}(u, v)$
+	$=\lim\limits_{r\rightarrow\infty}\int_{\mathbb{R}} \dif u \int_{\mathbb{R}} \dif v \ind (u)\ind (v) f_{XY}(u, v)$
 	$=\lim\limits_{r\rightarrow\infty}\int_{-\infty}^t \dif u \int_{-\infty}^r \dif v  f_{XY}(u, v) =|\text{B. Levi}|=
-	=\int_{\mathbb{R}} \dif u \lim\limits_{r\rightarrow\infty} \int_{\mathbb{R}} \dif v \mathbb{1}(u)\mathbb{1} f_{XY}(u, v)$
-	$F_X(t)=\int_{\mathbb{R}} \dif u \int_{\mathbb{R}} \dif v \mathbb{1}(u)\mathbb{1} f_{XY}(u, v)$.
+	=\int_{\mathbb{R}} \dif u \lim\limits_{r\rightarrow\infty} \int_{\mathbb{R}} \dif v \ind (u)\ind  f_{XY}(u, v)$
+	$F_X(t)=\int_{\mathbb{R}} \dif u \int_{\mathbb{R}} \dif v \ind (u)\ind  f_{XY}(u, v)$.
 	
 	Si $X$ est à densite $F_X(T) = \int\limits_{-\infty}^t f_X(u) \dif u$.
 \end{proof}
@@ -217,7 +217,77 @@ $$P_{(XY)}(B)=\sum_{k=1}^\infty\sum_{l=1}^\infty \frac{1}{2^{k+l}}\delta_{\{k, l
 Determiner la loi de $Z=\sup \{X, Y\}$.
 \begin{enumerate}
 	\item{question}. Determiner $P_X,\ P_Y$ oui $P_X(X=k)$.
-Si $X$ et $Y$ sont discrette $\mathbb{P}(X=k)=\sum\limits_j\mathbb{P}(X=k,\ Y=j)$. $$P_X(\{x\}=\sum\limits_j P_{XY}(\{k, j\})$$
-$$\mathbb{P}(X=k)=P_X(\{k\})=\sum\limits_{j=1}^\infty \frac{1}{2^{k+j}}$$
-$\mathbb{P}(Z\leq k)=\mathbb{P}(X\leq k, Y\leq k)=\int \mathbb{1}_{[0, k]^2}(X, Y)\dif \mathbb{P}=\iint \mathbb{1}_{[0, k]^2} \dif P_{XY}(u, v)=\sum\limits_{i,l=1}^\infty \frac{1}{2^{i+l}}\mathbb{1}_{[1, k]^2}(i, l)=\sum\limits_{i=1}^k\sum\limits_{l=1}^k\frac{1}{2^{i+l}}$
+Si $X$ et $Y$ sont discrette $\pro (X=k)=\sum\limits_j\pro (X=k,\ Y=j)$. $$P_X(\{x\}=\sum\limits_j P_{XY}(\{k, j\})$$
+$$\pro (X=k)=P_X(\{k\})=\sum\limits_{j=1}^\infty \frac{1}{2^{k+j}}$$
+$\pro (Z\leq k)=\pro (X\leq k, Y\leq k)=\int \ind _{[0, k]^2}(X, Y)\dif \pro =\iint \ind _{[0, k]^2} \dif P_{XY}(u, v)=\sum\limits_{i,l=1}^\infty \frac{1}{2^{i+l}}\ind _{[1, k]^2}(i, l)=\sum\limits_{i=1}^k\sum\limits_{l=1}^k\frac{1}{2^{i+l}}$
 \end{enumerate}
+
+\section{Lesson 4} % (fold)
+\label{sec:lesson_4}
+
+il fallait moutrer que si les variables aliatories $(X_1,\ X_2)$ ont une densiti $f_{X_1X_2}$ produit direct de deux fonctions $f_1$ et $f_2$ , alors a une courtant près, $f_1$ et $f_2$  sont le deuxtè de $X_1$ et $X_2$ et ces deux variables sont independantés.
+
+L'aut partie (ex.)
+
+Si $X_1$ et X2 sont indipendant de deuxites respectives $f_{X_1}$ et $f_{X_2}$, alors le vecteur $(X_1,\ X_2)$ a densité: $f_{X_1X_2}=f_{X_1} f_{X_2}$.
+
+\begin{proof}
+	\underline{Par Hyp}: $f_{X_1X_2}(u, v)=f_{X_1}(u) f_{X_2}(v)$. D'aurt cete on sait que en general:
+	$$f_{X_1}(u)=\int_{\R}f_{X_1X_2}(u,\ v)\dd{\lambda v}$$
+	$$f_{X_2}(v)=\int_{\R}f_{X_1X_2}(u,\ v)\dd{\lambda u}$$
+	\underline{Objectif}: Montrer que, a une costante pres $f_1=f_{X_1}$, $f_2=f_{X_2}$. On observe que:
+	$$f_{X_1}(u)=\int_{\R}f_{X_1X_2}(u,\ v)\dd{v}=f_1(u)\int_\R f_2(v)\dd{v}$$
+	$$f_{X_2}(v)=\int_{\R}f_{X_1X_2}(u,\ v)\dd{u}=f_1(v)\int_\R f_1(u)\dd{u}$$
+	On pultiple les deux expressions:
+	$$f_{X_1}(u)f_{X_2}(v)=f_1(u)f_2(v)\int_\R f_2(v)\dd{v}\int_\R f_1(u)\dd{u}=f_1(u)f_2(v)\iint_{\R\times\R} f_2(v) f_1(u)\dd{u}\dd{v}$$
+	Donc on a montré que $f_1(u)f_2(v)=f_{X_1}(u)f_{X_2}(v)$.
+	\begin{remark}
+		à des constants prés on pourra idéntifier $f_{X_1}$ avec $f_1$ et $f_{X_2}$ avec $f_2$. Pourtémniner: La loi du couple $(X_1, X_2)$ $P_{X_1X_2}$ ou sait que pent l'écriré. Notation Si on a ne mesure $P$ avec densite $f$ ou l'écrira coniue sa $P=f\dd{x}$, $P(A)=\int_A f\dd{x}$. $\int g\dd{f}=\int g f\dd{x}$.
+	\end{remark}
+		$$P_{X_1X_2}=f_{X_1X_2}(u, v)\dd{\lambda u}\dd{\lambda v}=f_1(u)f_2(v)\dd{\lambda u}\dd{\lambda v}=f_{X_1}(u)f_{X_2}(v)\dd{\lambda u}\dd{\lambda v}=P_{X_1}\times\circ P_{X_2}$$(product direct des lois marginales)
+
+\end{proof}
+
+\begin{proposition}
+	si $X_1$ et $X_2$ sond deux v.a., cessertious suirvantes sont equivalentes:
+	\begin{enumerate}
+		\item $X_1$ et $X_2$ sond independantes
+		\item $\forall$ fonctions $g_1$ et $g_2$ réellact positiones on a:
+			$$\int g_1\circ X_1 \dot g_2\circ X_2\dd{\pro}= \int g_1\circ X_1 d{\pro}\int g_2\circ X_2\dd{\pro}$$
+		\item Pur tout fouctions réles bornés, $g_1$ et $g_2$ on a:
+			$$\int g_1\circ X_1 \dot g_2\circ X_2\dd{\pro}= \int g_1\circ X_1 d{\pro}\int g_2\circ X_2\dd{\pro}$$
+	\end{enumerate}
+\end{proposition}
+
+\underline{Applications} Supposons que $g_1$ et $g_2$ sont l'identité et que $X_1$ et $X_2$ sont independantes:
+	$$\mathbb{E}(X_1\dot X_2)=\mathbb{E}(X_1)\times\mathbb{E}(X_2)$$
+	$$\int 1\circ X_1 \dot 2\circ X_2\dd{\pro}= \int 1\circ X_1 d{\pro}\int 2\circ X_2\dd{\pro}$$
+	
+\begin{examplebox}
+	$X_1$ et $X_2$ indipendent $\int X_1^2 \sin X_2\dd{\pro}=\int X_1^2 \dd{\pro} \int \sin X_2\dd{\pro}$.
+\end{examplebox}
+
+\begin{proof}
+	(Idée) % img 1
+\end{proof}
+
+Si $x_1$ et $X_2$ sont indepts: $\mathbb{V}(X_1+X_2)=\mathbb{V}(X_1)+\mathbb{V}(X_2)$.
+$\mathbb{E}([(X_1=X_2)-\mathbb{e}(X_1+X_2)]^2)$ On developpe ce carré Ondécoucre des ceme du type $\mathbb{E}(X_1X_2)$ On utilisere cete égalité pour définir le fait que 2 variables sont \underline{dicopllies}.
+
+\begin{examplebox}
+	Sur l'espase probabilite $(\omega, \mathcal{A}, \pro)$ on considere le xouple $(X, Y)$ ave loi conjomte $P_{XY}$ à densite
+	$$f_{XY}(u,v)=\alpha(1-u^2)\ind_{[0,1)}(u)v e^{-3v}\ind_{(0, +\infty)}$$
+	\begin{enumerate}
+		\item déterminer le valur de $\alpha$
+		\item déterminer la lois marginales.
+	\end{enumerate}
+\end{examplebox}
+
+\begin{examplebox}
+	Sur l'espase $(\Omega,\mathcal{A},\pro)$ ou le vecteru aléatoire $(X, Y)$ de loi
+	$$P_{XY}=\alpha(\mu_1+\mu_2+\mu_3)$$
+	où $\alpha$ est un parametu ree et $\mu$ est une mesure à densité avec densité:
+		$$f_1(u, v)=\frac{1}{u^2}e^{-v}\ind_{[1,+\infty)}(u)\ind_{[0, +\infty)}(v)$$
+	$\mu_2$: mesure uniforment distribuée sur $[0,1]\times[0,1]$. $\mu_3=\delta_{\{1,1\}}+\delta{\{-1,2\}}$. Determiner $\alpha$ et le lois marginales de $X$ et de $Y$. Est que $X$ et $Y$ sont independantes?
+\end{examplebox}
+% section lesson_4 (end)
