@@ -112,6 +112,32 @@ $$P_k=\pro (X=k)=C_n^k p^k (1-p)^{n-k},\ i\in\{0,\, ...\,, n\}$$
 	$$P_X(\{k\})=\pro (X=k)=\frac{e^{-\lambda}\lambda^k}{k!}$$ 
 \end{enumerate}
 
+\begin{rappel}
+	$X:Ω->\R$ est une \texttt{variable aléatoire}
+	
+	$\E(X)=∫_ΩX(ω)\dd{\pro(ω)}$ --- esperance,
+	$\V(X)=\E[[X-\E(X)]²]$ --- variance.
+	
+	Supposons $\E(X)= 0\Rightarrow \V(X)=\E(X²)$.
+	
+	$g(t)=t²$, $g◦X=X^2$. Si $g\circ X=X\circ g$, $g$ --- identite.
+\end{rappel}
+
+\begin{rappel}
+	\texttt{Variable aléatoire} à valeurs réelle: $X:Ω->\R$. \texttt{Loi de} $X$: une measure de probabilité sur $\R$ $P_X(B)=\pro(X\dmo(B)),\ B\in\mathcal{B}$.
+	
+\end{rappel}
+
+\begin{theorem}
+	Soit $X:Ω->\R$ une v.a. sur l'espace probabilisé $(Ω,\mathcal{A}, \pro)$ et soit $g:\R->\R$ une fonction measurable. si l'integrale $∫_Ω g\circ X\dd{\pro}$ existe on a
+	$$∫_Ωg(X(ω))\dd{\pro(ω)}=∫_\R g(t)\dd{P_X(t)}$$
+\end{theorem}
+
+\begin{examplebox}
+	Supposons que $X$ est discrete...
+	P1/2
+\end{examplebox}
+
 \underline{Independances}
 
 Si $X$ et $Y$ sond independantes
@@ -253,7 +279,7 @@ Si $X_1$ et X2 sont indipendant de deuxites respectives $f_{X_1}$ et $f_{X_2}$, 
 	\begin{enumerate}
 		\item $X_1$ et $X_2$ sond independantes
 		\item $\forall$ fonctions $g_1$ et $g_2$ réellact positiones on a:
-			$$\int g_1\circ X_1 \dot g_2\circ X_2\dd{\pro}= \int g_1\circ X_1 d{\pro}\int g_2\circ X_2\dd{\pro}$$
+			$$\int g_1\circ X_1 \dot g_2\circ X_2\dd{\pro}= \int g_1\circ X_1 \dd{\pro}\int g_2\circ X_2\dd{\pro}$$
 		\item Pur tout fouctions réles bornés, $g_1$ et $g_2$ on a:
 			$$\int g_1\circ X_1 \dot g_2\circ X_2\dd{\pro}= \int g_1\circ X_1 d{\pro}\int g_2\circ X_2\dd{\pro}$$
 	\end{enumerate}
@@ -291,3 +317,168 @@ $\mathbb{E}([(X_1=X_2)-\mathbb{e}(X_1+X_2)]^2)$ On developpe ce carré Ondécouc
 	$\mu_2$: mesure uniforment distribuée sur $[0,1]\times[0,1]$. $\mu_3=\delta_{\{1,1\}}+\delta{\{-1,2\}}$. Determiner $\alpha$ et le lois marginales de $X$ et de $Y$. Est que $X$ et $Y$ sont independantes?
 \end{examplebox}
 % section lesson_4 (end)
+
+\begin{exercise}
+		Soit $(X,Y)$ un vecteur dliatoire à veleurs dans $\R^2$.
+		\begin{enumerate}
+			\item suppose que le loi du couple $(X,Y)$ est connue:
+			$$d_{XY}(u,v)=\lambda \rho e^{-\lambda u - \rho v}\ind_{\R^2_+}(u,v) \dd{u}\dd{v}$$
+			Determiner la loi de la v.a. $W=\min\{X,Y\}$
+			
+			Deux méthodes (équivalentes). 1 ere méthode: $F_W(t)=\P(W\leq t)=1-\P(W>t)=1-\P(X>t,Y>t)=1-\int\limits_\Omega \ind_{(t,+\infty)}X\cdot \ind_{(t,+\infty)}Y \dd{\pro}=\iint\limits_{\R\times\R} \ind_{(t,+\infty)\times(t,+\infty)}\dd{P_{XY}(u,v)}=\iint\limits_{\R\times\R} \ind_{(t,+\infty)\times(t,+\infty)} \lambda \rho e^{-\lambda u}e^{-\rho v}\dd{u}\dd{v},\ t\geq 0$
+$=1-\int_t^\infty \dd{u} \int_t^\infty \dd{v} \lambda \rho e^{-\lambda u} e^{-\rho v}=1-\lambda\int_t^\infty e^{-\lambda}\dd{u} \rho \int_t^\infty e^{-\rho v}\dd{v} = [1-e^{-(\lambda -\rho)t}]\ind_{[0,\infty]}(t)$.
+
+On sait que:
+$$F_W(t)=\int_{-\infty}^tf_W(s)\dd{s}.$$
+Si on connait $f_X$, ou peut calculer $F_W$?
+
+$F$---distribution function (function de repartition).\\
+$f$---probability density function (function de density).
+
+$F'_W(t)=(\lambda+\rho)e^{-(\lambda+\rho)t}$
+Mais $F'_W=(\lambda+\rho)$ from +, but 0 from -0.		
+
+Il y a 2 cas:\\
+(i)	$t\in(-\infty,0)\ F_W(t)=0\Rightarrow f_W(t)=0$\\
+(ii) $t\geq 0$ $[1-e^{(\lambda+\rho)t}]=\int_\infty^t f_W(s)\dd{s}$
+
+Est-ce que $X$ et $Y$ sont indépendantes? Yes. $f_X\cdot f_Y$.
+
+Méthode tris générale pour conotruire des variables aleatorias.
+
+On cnstruit une nouvelle v.a. $g\circ X=Y$. \underline{Question} Si on connaît la loi de $X$, peut on calculer la loi de $Y$?
+Ex $X$ a nue loi exp: $f_X(u)=\lambda e^{-\lambda u}$; calcules la loi de $\sqrt[2]{X}=Y$.
+
+Couridevous une fouction test non-negative $h:\R\to\R_+$ et ou eousitere:
+$$\mathbb{E}(h\circ Y)=\int_\Omega h\circ Y\dd{\pro}=\int_\Omega h\circ g\circ X \dd{P}$$
+$$\int_\Omega h\circ Y\dd{\pro}=\int_\R h(v)f_Y(v)\dd{v}$$
+$$==\int_\R h(g(u))\dd{P_X(u)}=\int_\R h(g(u))f_x(u)\dd{u}$$
+
+On a: $\int_\R h(g(u))f_X(u)\dd(u)=(\mbox{Particular case})=\lambda\int_\R h(\sqrt{u})e^{-\lambda u}\dd{u}$
+
+On pose $\sqrt{u}=v$ $\dd{v}=\frac1{2v}\dd{u}$
+
+$==2\lambda\int_0^\infty h(v)e^{-\lambda v^2}v\dd{v}$.
+
+Loi de $Y=\sqrt{X}$ est: $f_Y(v)=2\lambda v e^{-\lambda v^2} \ind_{[0,+\infty)}(v)$.
+
+\underline{Deux méthod}
+
+$\mathbb{E}(h(W))\overset{\mbox{\tiny si on l'ect, comme ca}}{=}=\int_\R h(y)f_W(y)\dd{y}$, $f_W$ la densité de $W$. $h$ -fonction test.
+
+$\mathbb{E}(h(W))=\int_\Omega h\circ W\dd{\pro} = \int_\Omega h\circ \min(X,Y)\dd{\pro}=\iint_{\R\times\R}h(\min(u,v))\lambda e^{-\lambda u}\rho e^{-\rho v}\dd{u}\dd{v}= 
+\iint\limits_{\{(u,v), u<v\}}h(u)\lambda e^{-\lambda u}\rho e^{-\rho v}\dd{u}\dd{v}+\iint\limits_{\{(u,v), u>v\}}h(u)\lambda e^{-\lambda u}\rho e^{-\rho v}\dd{u}\dd{v}=
+\int_0^{+\infty}h(u)e^{-(\lambda+\rho)u}(\lambda+\rho)\dd{u}$
+	
+	\item 
+	\end{enumerate}
+
+
+\end{exercise}
+
+On a un vecteur aliatoire $(X,Y)$ a valeurs dans $\R^2$, avec loi:
+$$f_{XY}(u,v)= \frac1{4\pi} e^{-\frac u2}\ind_{\{u\geq 0\}} \ind_{[0,2\pi]}$$
+Determiner loi du vecteur aliatoire $(\sqrt X \cos Y, \sqrt X \sin Y)$.
+
+$\omega\rightarrow(X(\omega),Y(\omega))$
+
+$$g: \left\{ \begin{array}{rcl}u&=&g_1(x,y)\\v&=&g_2(x,y)\end{array} \right.$$
+$g=(g_1,g_2)$
+
+\begin{align*}
+	v(\omega)=g_1(X(\omega), Y(\omega))\\
+	u(\omega)=g_2(X(\omega), Y(\omega))
+\end{align*}
+ U vecteur: $(g_1\circ (X,Y), g_2\circ (X,Y))$.
+ 
+ Test fonction $h$, $h:\R^2\rightarrow \R$.
+
+$\mathbb{E}(h\circ (X,Y))=\int h\circ (X,Y)\dd{\pro}=\iint h(g(u,v))f_{XY}(u,v)\dd{u} \dd{v}=\iint h(g_1(u,v),g_2(u,v))f_{XY}(u,v)\dd{u} \dd{v} \overset{?}{=} \int h(\alpha,\beta)f(\alpha, \beta)\dd{\alpha}\dd{\beta}$	
+
+
+\section{lesson}
+
+$(X,Y)$ 2 v.a. et euxute ou avcit une fouction vectoriélle $g=(g_1,g_2)$ $g:\R^2\rightarrow\R^2$ et on difinit 2 nouvelle v.a. $U$ et $V$ de cette façon:
+$U=g_1\circ (X,Y)$, $V=g_2\circ (X,Y)$ et
+$$\left\{\begin{array}{ccc}U(\omega)&=g_1(X(\omega),Y(\omega))\\V(\omega)&=g_2(X(\omega),Y(\omega))\end{array}\right.,\ \omega\in\Omega\text{ (espace des elements)}$$
+
+%img arrows r^2
+
+Cas particuler (Exercice)
+$(X,Y)$ une couple de v.a. de loi  cougointe:;
+$$f_{XY}=\frac1{4\pi}e^{-\frac u2}\ind_{u\geq 0}(u)\ind_{[0,2\pi]}(v)\dd{u}\dd{v}$$
+Question: Trouver la loi du couple:
+$$(\sqrt{X}\cos Y, \sqrt X\sin Y)=(U,V)$$
+Sait $h:\R^2\rightarrow \R$ une fonction test non-negative.
+
+$\E(h\circ g(X,Y))=\int_\Omega h\circ g(X,Y)\dd{\pro}=\iint\limits_{\R^2}h(g_1(x,y), g_2(x,y))f_{XY}(x,y)\dd{x} \dd{y}\overset{?}{=}\iint\limits_{\R^2}h(u,v)f_{UV}(u,v)\dd{u} \dd{v}$
+
+$$\left\{\begin{array}{ccc}u=\sqrt x \cos y\\ v=\sqrt x \sin y\end{array}\right.$$
+
+$$g: \left\{ \begin{array}{ccc}u&=&g_1(x,y)\\v&=&g_2(x,y)\end{array} \right.$$
+
+$g=(g_1,g_2)$. Pour povoir effectuer un changement de variable, il faut que $g$ soiit un \underline{diffeomorphism} entre 2 ouverts.
+% img omega 
+
+$g:\mathcal O_1\rightarrow \mathcal O_2$ diffeomorphism cutu deux ouverts. Coudition equivalents pour avoir un diffeomorphism:
+\begin{enumerate}
+	\item $g$ est injective sur $\mathcal O_1$ à valeurs dans $\mathcal O_2$.
+	\item $g$ est de classe $b^{(1)}(\mathcal O_1)$, c'est-à dire les deciver peut eller de $g$ existe tout caitunes.
+	\item Le determinant de $(g\dmo)'\neq 0$ sur$\mathcal O_2$
+\end{enumerate}
+
+Nous son defini
+
+$$g: \left\{ \begin{array}{ccc}u&=&g_1(x,y)\\v&=&g_2(x,y)\end{array} \right.\overset{\mbox{il faut inverser}}{\rightarrow}$$
+$$g\dmo: \left\{ \begin{array}{ccc}x&=&\Phi_1(u,v)\\y&=&\Phi_2(u,v)\end{array} \right.$$
+$\Phi=(\Phi_1,\Phi_2)$
+
+On coustruit la invative Jacobienne (derives) de $g\dmo=\Phi$:
+
+$$J_\Phi(u,v)=\mqty(\pdv{\Phi_1}{u}&\pdv{\Phi_1}{v}\\\pdv{\Phi_2}{u}&\pdv{\Phi_2}{v})$$
+$$|\det J_\Phi (u,v)|$$
+
+$$=\iint\limits_{g(O_1)=O_2}h(u,v)f_{XY}(\Phi_1(u,v),\Phi_2(u,v))|\det J_\Phi (u,v)|\dd{u}\dd{v}$$
+
+Trouve le nouvelle domain d'integration.
+
+La densiti de $(U,V)$ est donc:
+$$f_{UV}(u,v)=f_{XY}(\Phi_1(u,v),\Phi_2(u,v))\cdot |\det J_\Phi(u,v)|\cdot \ind_{g(\mathcal O_1)}(u,v)$$
+
+
+Continue with exercice:
+
+$\iint_{0\ 0}^{\infty\ 2\pi} h(\sqrt x \cos y,\sqrt x \sin y)\frac 1{4\pi}e^{-\frac x2}\dd{x}\dd{y}$
+
+$$g:\ \left\{\begin{array}{ccc}u=\sqrt x \cos y\\ v=\sqrt x \sin y\end{array}\right.$$
+
+$\Rightarrow \Phi: \left\{\begin{array}{ccc}x=u^2+v^2 \\ y=\arctan(\frac vu) \end{array}\right.$
+
+
+$=\iint\limits_{\R\times\R}=\dd u\dd v h(u,v) \frac 1{4\pi}e^{\frac{-(u^2+v^2)}2}\cdot |\det J_\Phi (u,v)|$
+
+$$J_\Phi(u,v)=\left(\begin{array}{cc}2u&2v\\ \frac{-v}{u^2+v^2}&\frac u{u^2+v^2}\end{array}\right)$$
+$\det J_\Phi (u,v)=\frac{2u^2}{u^2+v^2}+\frac{2v^2}{u^2+v^2}$
+
+Question:
+\begin{itemize}
+	\item $U$ et $V$ sont independent? Oui car $f=f1\cdot f2$
+	\item Lui de $U$ et $V$:
+	$\frac 1{\sqrt 2\pi}e^{\frac{-(u^2+v^2)}2}$ et $\frac 1{\sqrt 2\pi}e^{\frac{-(u^2+v^2)}2}$
+\end{itemize}
+
+Exercice
+Soit $(X,Y)$ une vecteur aliatoire de loi $f_{XY}(x,y)=\frac 1{2\pi}e^{-\frac{x^2+y^2}2}$. Calculer la loi de $(X+Y,Y)$.
+Objectiv calcul la lua de la summe.
+
+$$\iint_{\R^2}h(x+y, y)\frac 1{2\pi}e^{-\frac{x^2+y^2}2}\dd x\dd y$$
+$$g: \left\{ \begin{array}{ccc}u&=&g_1(x,y)=x+y\\v&=&g_2(x,y)=y\end{array} \right.$$
+$$\Phi: \left\{ \begin{array}{ccc}x&=&u-v\\y&=&v\end{array} \right.$$
+$$\abs{\det J_\Phi (u,v)}=1$$
+$$=\iint_{\R\times\R}h(u,v)\frac{1}{2\pi}e^{-\frac{(u-v)^2+v^2}{2}}\dd u\dd v$$
+Densiti de $(X+Y,Y)$ est $\frac{1}{2\pi}e^{-\frac{u^2-2uv+2v^2}{2}}$.
+Densiti de $(X+Y)$:
+$$f_U(u)=\int_{-\infty}^\infty f_{UV}(u,v)\dd v=\frac 1{2\pi}\int_{-\infty}^\infty e^{-\frac 12(u^2-2uv+2v^2)}\dd v$$
+---produit de convolution.
+
+Si $X$ et $Y$ sont independant de loi marginal $f_X$ et $f_Y$ alors la v.a. X+Y est à densitè est $f_{X+Y}(u)=\int_\R f_Y(u)\cdot f_X(u-v)\dd v\overset{\mbox{def}}{=}f_Y\ast f_X$---produit de convolution.
