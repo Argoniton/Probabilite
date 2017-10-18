@@ -1,10 +1,14 @@
+\chapter{Base de Probablite} % (fold)
+\label{cha:base_de_probablite}
+
+% chapter base_de_probablite (end)
 \section{Espase Probabilisé} % (fold)
 \label{sec:course_1}
 
 % section course_1 (end)
 Soit $\Omega$ est \textsc{Univers} (est random ensemble).
 
-\begin{definition}{\emph{$\sigma$ - algebra}}
+\begin{definition}[$\sigma$ - algebra]
 	
 	La famille des ensembles $\mathcal{A}$ s'appelle \textsc{$\sigma$-Algebra} si:
 	\begin{enumerate}
@@ -15,12 +19,14 @@ Soit $\Omega$ est \textsc{Univers} (est random ensemble).
 \end{definition}
 
 
-\begin{definition}{\emph{Probabilité}}
+\begin{definition}[Probabilité]
+	\leavevmode
 	\begin{enumerate}
 		\item $\pro (\Omega)=1$
 		\item Si $\{A_k\}_k^\infty$ - disjoint (pour tout $i\neq j:\ A_i\cup A_j = \emptyset$):
-		$$\pro (\cup^\infty_{k=1}A_k)=\sum^\infty_{k=1}\pro (A_k)$$
 	\end{enumerate}
+		$$\pro (\cup^\infty_{k=1}A_k)=\sum^\infty_{k=1}\pro (A_k)$$
+
 \end{definition}
 
 Espasce probabilisable $( \underbrace{\Omega}_\text{univers},\ 
@@ -36,10 +42,10 @@ Espase probabillisé $(\Omega,\ \mathcal{A},\ \pro )$.
 \mathcal{A} &  &  \mathcal{B}\text{ (Borel)}
 \end{diagram}
 
-Soit $\Omega$ un ensemble. Soit $\mathcal{F}$ un famille d'ensembles de $\Omega$, qui n'est pas forcément une $\sigma$-algebre.
+Soit $\Omega$ un ensemble. Soit $\mathcal{F}$ un famille d'ensembles de $\Omega$, qui n'est pas forcément une $\sigma$-algèbre.
 
 \begin{definition}
-	On appelle $\sigma$-algebr engendrée par $\mathcal{F}$, denotée $\sigma(\mathcal{F})$ la plus petite $\sigma$-algebre que contient $\mathcal{F}$.
+	On appelle $\sigma$-algèbre engendrée par $\mathcal{F}$, dénotée $\sigma(\mathcal{F})$ la plus petite $\sigma$-algèbre que contient $\mathcal{F}$.
 \end{definition}
 
 \begin{definition}
@@ -53,7 +59,7 @@ On dit Borel ($\mathcal{B}$) est aussi $\sigma$-algebre engendrée par des inter
 \end{remark}
 
 \begin{proposition}
-	Pour verifier la measurable il suffit de la tester sur une famile qui engendrée la $\sigma$-algebre de Borele.
+	Pour verifier la measurable il suffit de la tester sur une famille qui engendrée la $\sigma$-algèbre de Borele.
 \end{proposition}
 
 \emph{Exercice}. (simple mais important)\\
@@ -62,9 +68,9 @@ Soit $\Omega$ un ensemble. $\mathcal{P}= \{P_1,\ P_2,\,...\,,\ P_k\}$ est une pa
 \begin{enumerate}
 	\item Trouve $\sigma(\mathcal{P})$.\\Réponse:
 	
-$\sigma(\mathcal{P})$ contient tout reunion d'elementes $\mathcal{P}$.\\
+$\sigma(\mathcal{P})$ contient tout reunion d'éléments $\mathcal{P}$.\\
 (En partiqulier si $A\in\sigma(\mathcal{P})$: $A=\cup_{k=1}^l P_{i_k}$)
-	\item Trouve commont sont faites les v.a. par rapport â $\sigma{\mathcal{P}}$.\\Réponse:
+	\item Trouve comment sont faites les v.a. par rapport â $\sigma{\mathcal{P}}$.\\Réponse:
 	
 	Consider $\Omega=\mathbb{R}$. $X(\omega)=\alpha$. $\alpha$ est l'image $\omega$. Le point  $\alpha$ est aussi un ensemble, qu'on denote $\{\alpha\}$: "singlitore" qui est un borelien. Car $X$ est measurable par rapport â $\sigma(\mathcal{P})$, $X^{-1}(\{\alpha\})=\cup P_{i_k}$.
 	
@@ -73,9 +79,9 @@ $\sigma(\mathcal{P})$ contient tout reunion d'elementes $\mathcal{P}$.\\
 	On replace $X$ avec autre object qui "approxime" $X$ est measurable par rapport â $\sigma(\mathcal{P})$.
 \end{enumerate}
 
-Espase probabilisé $(\Omega,\ \mathcal{A},\ \pro )$. $X:\Omega\rightarrow\underbrace{\mathbb{R}}_\text{Borel}$,  $X$ est v.a. 
+Espace probabilisé $(\Omega,\ \mathcal{A},\ \pro )$. $X:\Omega\rightarrow\underbrace{\mathbb{R}}_\text{Borel}$,  $X$ est v.a. 
 
-Loi de $X$ on définir un mesure de probabilite sur ($\mathbb{R},\ \mathcal{B}$) de la maniere sivante si $B\in\mathcal{B}$: $P_X(B)=\pro (X^{-1}(B))$.
+Loi de $X$ on définir un mesure de probabilite sur ($\mathbb{R},\ \mathcal{B}$) de la manière suivante si $B\in\mathcal{B}$: $P_X(B)=\pro (X^{-1}(B))$.
 
 On appelle $P_X$ de \textsc{La Loi de $X$}.
 
@@ -83,7 +89,7 @@ $X:\Omega\rightarrow\mathbb{R}$ On pourra écrite $X$ de la maniere suivante: $X
 
 Si $B\in\mathcal{F}$, $P_X(B) = \pro (X^{-1}(B))$.
 
-On appelle $D$ l'ensemble valiur de $X$: $D=\{x_1,\ X_2,\, ...\,x_k\, ...\}$.
+On appelle $D$ l'ensemble valeur de $X$: $D=\{x_1,\ X_2,\, ...\,x_k\, ...\}$.
 
 $P_X(B)=P_X(B\cap D)=P_X(B\cap \cup_{k=1}^\infty\{x_k\})=P_X(\cup_{k=1}^\infty(B\cap \{x_k\}))=\sum_{k=1}^\infty P_X(B\cap \{x_k\})=\sum_{k=1}^\infty \pro (X=x_k)\delta_{\{x_k\}}(B)=\sum_{k=1}^\infty p_k \delta_{\{x_k\}}(B)$
 
@@ -104,7 +110,7 @@ $$\left. \begin{array}{rrl}
 Exemple. (v.a. discrete)
 \begin{enumerate}
 	
-	\item $B(n,\ p)$ dinomiale\\
+	\item $B(n,\ p)$ binomiale\\
 Valeurs: $X=\{0,\ 1,\,...\, n\}$.
 $$P_k=\pro (X=k)=C_n^k p^k (1-p)^{n-k},\ i\in\{0,\, ...\,, n\}$$
 	\item Poisson $P(\lambda)$. Valeurs $X=\{0,\ 1,\ 2,\, ...\,\}$ - dénombrable.
@@ -113,14 +119,14 @@ $$P_k=\pro (X=k)=C_n^k p^k (1-p)^{n-k},\ i\in\{0,\, ...\,, n\}$$
 \end{enumerate}
 
 \begin{rappel}
-	$X:Ω->\R$ est une \texttt{variable aléatoire}
+	$X:Ω\rightarrow \R$ est une \texttt{variable aléatoire}
 	
 	$\E(X)=∫_ΩX(ω)\dd{\pro(ω)}$ --- esperance,
 	$\V(X)=\E[[X-\E(X)]²]$ --- variance.
 	
 	Supposons $\E(X)= 0\Rightarrow \V(X)=\E(X²)$.
 	
-	$g(t)=t²$, $g◦X=X^2$. Si $g\circ X=X\circ g$, $g$ --- identite.
+	$g(t)=t²$, $g◦X=X^2$. Si $g\circ X=X\circ g$, $g$ --- identité.
 \end{rappel}
 
 \begin{rappel}
@@ -129,211 +135,262 @@ $$P_k=\pro (X=k)=C_n^k p^k (1-p)^{n-k},\ i\in\{0,\, ...\,, n\}$$
 \end{rappel}
 
 \begin{theorem}
-	Soit $X:Ω->\R$ une v.a. sur l'espace probabilisé $(Ω,\mathcal{A}, \pro)$ et soit $g:\R->\R$ une fonction measurable. si l'integrale $∫_Ω g\circ X\dd{\pro}$ existe on a
+	Soit $X:Ω->\R$ une v.a. sur l'espace probabilisé $(Ω,\mathcal{A}, \pro)$ et soit $g:\R->\R$ une fonction mesurable. si l'intégrale $∫_Ω g\circ X\dd{\pro}$ existe on a
 	$$∫_Ωg(X(ω))\dd{\pro(ω)}=∫_\R g(t)\dd{P_X(t)}$$
 \end{theorem}
 
 \begin{examplebox}
-	Supposons que $X$ est discrete...
+	Supposons que $X$ est discrète...
 	P1/2
 \end{examplebox}
 
-\underline{Independances}
+\begin{definition}
+	$X:Ω->\R$ v.a.
+	$$F(t):=\pro(X≤t)=\pro(ω:\ X(ω)≤t)=P_X((-∞,t])$$
+\end{definition}
 
-Si $X$ et $Y$ sond independantes
-$$P_{XY}(x\in A, Y\in B)=P_X(A) P_X(B)$$
+\begin{proposition}
+	Toute fonction de repartition $F$ vérifie les propriétés suivantes:
+	\begin{enumerate}
+		\item $F$ est non-negative et croissante.
+		\item $F$ est continue à droite.
+		\item $F$ est discontinue dans plus un nombre dénombrée de point.
+		\item $\left\{\begin{array}{l}\lim\limits_{t\to +∞}F(t)=1\\ \lim\limits_{t\to -∞}F(t)=0\end{array}\right.$.
+	\end{enumerate}
+\end{proposition}
 
-Produit direct de deux measure?
+\subsection{Rappel de Th. de la measure} % (fold)
+\label{sub:rappel_de_th_de_la_measure}
+Soit $F$ une fonction croissante réelle positive (en particulier $F$ est la fonction de repartition d'une v.a.).
 
-Considere $S=S_1\times S_2$.
+Ou définit une fonction d'ensemble sur $\R$:
+\[\tilde F((a,b])=F(b)-F(a)\ \label{eq:leb-stilt-measure} \tag{*}\]
+Il y a un théorème de théorie de la measure que dit que la fonction d'ensemble $\tilde F$ défini sur la famille $\{[a,b]\}$ peut s'étendre à une measure sur la $σ$-algebra engendrée par cette famille ($\mathcal B$ --- Borel) et la restriction de cette mesure sur la famille $\{[a,b]\}$ vérifie l'égalité \eqref{eq:leb-stilt-measure}.
 
-Defiltat
+Cette measure est appelle la mesure le \textsc{Lebésgue-Stiltyes}. $F(t)=\pro(X≤t)$.
 
-Di ou construit l'espase measurable $(S_1\times S_2,\ \mathcal{A}_1\times\mathcal{A}_2)$
+% subsection rappel_de_th_de_la_measure (end)
 
-Il existe une seule measure $\bar{\nu}$ telle que:
-$$\bar{\mu}(A_1\times A_2)=\mu_1(A_1)\mu_2{A_2}$$
+\section{Indépendances}
 
-Cette measure $\bar{\mu}$ est le produit direct de $\mu_1$ et $\mu_1$, denote $\bar{\mu}\mu_1\times\mu_1$.
+$A$, $B$ deux événements (c'est-à-dire $A, B\in\mathcal{A}$).
+\begin{definition}
+	On dira que $A$ et $B$ sont \textsc{Indépendants} si $$\pro(A\cap B)=\pro(A)\pro(B).$$
+\end{definition}
 
+\begin{definition}
+	On appelle $σ$-algèbre engendrée par une variable aléatoire $X$, $σ(X)$ la plus petite $σ$-algèbre pour rapport à la quelle $X$ est mesurable.	
+\end{definition}
+
+\begin{proposition}
+	$σ(X)=\{X\dmo (B)\ |\ B\in \mathcal{B}\}$
+\end{proposition}
+
+\begin{definition}
+	Deux v.a. $X$ et $Y$ définies sur le même espace $(Ω,\mathcal A,\pro)$ sont l'indépendantes si $σ(X)$ et $σ(Y)$ sont indépendantes.
+\end{definition}
+	
+On appelle $σ$-algèbre engendrée par une variable aléatoire $X$, $σ(X)$ la plus petite $σ$-algèbre pour rapport à la quelle $X$ est mesurable.
+
+Si $X$ et $Y$ sont indépendantes si
+$$P_{XY}(X\in A, Y\in B)=P_X(A) P_Y(B)$$
+
+Produit direct de deux mesure? Considéré $S=S_1\times S_2$.
+Di ou construit l'espace mesurable $(S_1\times S_2,\ \mathcal{A}_1\times\mathcal{A}_2)$. Il existe une seule mesure $\bar{\mu}$ telle que:
+$$\bar{\mu}(A_1\times A_2)=\mu_1(A_1)•\mu_2{A_2}$$
+
+Cette mesure $\bar{\mu}$ est le produit direct de $\mu_1$ et $\mu_1$, dénote $\bar{\mu}=\mu_1\times\mu_1$.
+
+\begin{theorem}
+	Deux variables aléatoire $X$ et $Y$ sont indépendantes ssi la loi conjointe coïncide avec le produit direct des lois marginales.
 C'est-â-dire:
 $$P_{XY}=P_X\times P_Y$$ % put in box.
+\end{theorem}
 
 Ex
 $$\int\limits_{\mathbb{R}} f(t,u) \dif P_{XY}(t, u)\mu$$
 
-On a besoin d'une autre quantiti; fouction de repartition de deux variables.
+On a besoin d'une autre quantité; fonction de répartition de deux variables.
 
 \begin{definition}
-	Si $X$ et $Y$ sont 2 v.a. ou definit
+	Si $X$ et $Y$ sont 2 v.a. ou définit
 	$$F_{xy}(u,\ v)=\pro (X\leq u, Y\leq v)$$
 \end{definition}
 
 \begin{proposition}
-	Si ou connait la founction de repartition du couple $(X,Y)$ on peut calculer les fouctions de repartition marginales
+	Si ou connait la fonction de répartition du couple $(X,Y)$ on peut calculer les fonctions de répartition marginales
 	$$F_X(u)=\lim\limits_{v\rightarrow +\infty}F_{XY}(u, v)$$
 	$$F_Y(v)=\lim\limits_{u\rightarrow +\infty}F_{XY}(u, v)$$
 \end{proposition}
 \begin{proof}
-	$F_X(u)=\pro (X\leq u)=P_X((-\infty, u])$. Utilize $\mathbb{R}=\cup^\infty_{k=1}(-\infty, k]$ $(-\infty, k)$ est croissant. $\pro (X\leq u)=\pro (X\leq u, Y\in\mathbb{R})=\pro (X\leq u, Y\in\cup_{k=1}^\infty(-\infty, k])$. $F_X(u)=\pro (X\leq u)=P_X((-\infty, u])$.
+	$F_X(u)=\pro (X\leq u)=P_X((-\infty, u])$. Utilise $\mathbb{R}=\cup^\infty_{k=1}(-\infty, k]$ $(-\infty, k)$ est croissant. $\pro (X\leq u)=\pro (X\leq u, Y\in\mathbb{R})=\pro (X\leq u, Y\in\cup_{k=1}^\infty(-\infty, k])$. $F_X(u)=\pro (X\leq u)=P_X((-\infty, u])$.
 \end{proof}
 
 \begin{proposition}
-	Si $X$ est $Y$ sont independant v.a. donc $F_{XY}(u, v)=F_x(U) F_Y(V)$
+	Si $X$ est $Y$ sont indépendant v.a. donc $F_{XY}(u, v)=F_x(U) F_Y(V)$
 \end{proposition}
 \begin{proof}
 	...
 \end{proof}
 
 \begin{proposition}	
-	Si on a: $F_{XY}=(u, v)=F_X(u)F_Y(v)$ cest-a que $X$ et $Y$ sont independante? Oui.
+	Si on a: $F_{XY}=(u, v)=F_X(u)F_Y(v)$ cest-a que $X$ et $Y$ sont indépendante? Oui.
 \end{proposition}
 \begin{proof}
 	$$P_{XY}(X\leq u, Y\leq v)=P_X(X\leq u)P_Y(Y\leq u)$$
-	la borelien de la forme $\{(-\infty, u], |u|<\infty\}$ verifiet le properte de l'intersection firme.
+	la borelien de la forme $\{(-\infty, u], |u|<\infty\}$ vérifier le propriété de l'intersection firme.
 \end{proof}
 
 \begin{definition}
-	La measure de lebegue dans $\mathbb{R}^2$ est la measure droduit direct des measure des lebesgue dans $\mathbb{R}$.
+	La mesure de lebegue dans $\mathbb{R}^2$ est la mesure produit direct des mesure des lebesgue dans $\mathbb{R}$.
 \end{definition}
 
 Convention $\int f\dif \lambda(x)=\int f \dif x$.
 
 \begin{definition}
-	Un couple de v.a $(X, Y)$ a une loi conjointe $P_{XY}$ a density si pour toute borelie $B\in\mathcal{B}^{(2)}$ ($\sigma$-algebre produite), on a
+	Un couple de v.a $(X, Y)$ a une loi conjointe $P_{XY}$ a density si pour toute borelie $B\in\mathcal{B}^{(2)}$ ($\sigma$-algèbre produite), on a
 	$$P_{XY}(B)=\iint\limits_{B}f_{XY}(u, v)\dif\lambda(u)\dif\lambda(v)$$. En particulier s ou a $g(u,v)\in L^1(P_{XY})$ on a:
 	$$\iint\limits_{\mathbb{R}^2}g(u, v)\dif P_{XY}(u, v)=\iint g(u,v) f_{XY}(u, v)\dif \lambda(u) \dif \lambda(v)$$
 \end{definition}
 
 Questions
 \begin{enumerate}
-	\item Donnet les proprieties de $f_{XY}$ quand $X$ et $Y$ sont independents.
+	\item Donner les proprettes de $f_{XY}$ quand $X$ et $Y$ sont indépendants.
 	\item Si on connait $F_{XY}(u, v)$ est-ce qu'on peut calculer les marginales $f_X(u),\ f_Y{v}$?
 \end{enumerate}
 
-\begin{proposition}{generale}
+\begin{proposition}[générale]
 	Si on connait $f_{XY}(u, v)$ on a:
 	$\begin{array}{rrl}f_X(u) & = & \int_\mathbb{R}F_{XY}(u,v)\dif v\\ f_X(v) & = & \int_\mathbb{R}F_{XY}(u,v)\dif u\end{array}$
 \end{proposition}
 \begin{proof}
 	$F_X(t)=\lim\limits_{r\rightarrow\infty}F_{XY}(t, r)|=|$\\
-	$$F_{XY}(t,r)=\pro (X\leq t, Y\leq r)=P_{XY}((-\infty, t]\times(-\infty, r])=\iint_{-\infty -\infty}^{t\ r}\dif \lambda(u) \dif \lambda(v)=F_{XY}(t,r)$$
+	$$F_{XY}(t,r)=\pro (X\leq t, Y\leq r)=P_{XY}((-\infty, t]\times(-\infty, r])=\int\limits_{-\infty}^t\int\limits_{-\infty}^r\dif \lambda(u) \dif \lambda(v)=F_{XY}(t,r)$$
 	$|=|\lim\limits_{r\rightarrow\infty}\iint_{-\infty -\infty}^{t\ r} f_{XY}(u, v)\dif \lambda(u) \dif \lambda(v)=\lim\limits_{r\rightarrow\infty}\iint_{-\infty -\infty}^{t\ r} f_{XY}(u, v)\ind (u)\ind (v)\dif \lambda(u) \dif \lambda(v)=$\\
-	\text{| Par Fubini ou sont itirer les integrales: |}\\
+	\text{| Par Fubini ou sont étirer les intégrales: |}\\
 	$=\lim\limits_{r\rightarrow\infty}\int_{\mathbb{R}} \dif u \int_{\mathbb{R}} \dif v \ind (u)\ind (v) f_{XY}(u, v)$
 	$=\lim\limits_{r\rightarrow\infty}\int_{-\infty}^t \dif u \int_{-\infty}^r \dif v  f_{XY}(u, v) =|\text{B. Levi}|=
 	=\int_{\mathbb{R}} \dif u \lim\limits_{r\rightarrow\infty} \int_{\mathbb{R}} \dif v \ind (u)\ind  f_{XY}(u, v)$
 	$F_X(t)=\int_{\mathbb{R}} \dif u \int_{\mathbb{R}} \dif v \ind (u)\ind  f_{XY}(u, v)$.
 	
-	Si $X$ est à densite $F_X(T) = \int\limits_{-\infty}^t f_X(u) \dif u$.
+	Si $X$ est à densité $F_X(T) = \int\limits_{-\infty}^t f_X(u) \dif u$.
 \end{proof}
 
-\underline{Question} (Independantes et densités)
+\underline{Question} (Indépendantes et densités)
 \begin{proposition}
 	Ou a deux parties.
 	\begin{enumerate}
-		\item Si 2 v.a. $X$ et $Y$ admetteit, des densitis $f_X$ et $f_Y$ admetteut des densitis $f_X$ et $f_y$ et $X$ et $Y$ sont independantes, alors le couple (X, Y) ament une loi conjointe a densité et $f_{XY}=f_X f_Y$.
-		\item Si le couple $(X, Y)$ adment une densite $f_{XY}$ produit de deux fouctions integrable $f_1$ et $f_2$ alors $f_1$ et $f_2$ sont les densities (à une constant pvit) de $X$ et $Y$ et $X$ et $Y$ sont indipendantes.
+		\item Si 2 v.a. $X$ et $Y$ admettait, des densités $f_X$ et $f_Y$ admettent des densités $f_X$ et $f_y$ et $X$ et $Y$ sont indépendantes, alors le couple (X, Y) admet une loi conjointe a densité et $f_{XY}=f_X f_Y$.
+		\item Si le couple $(X, Y)$ admet une densité $f_{XY}$ produit de deux fonctions intégrable $f_1$ et $f_2$ alors $f_1$ et $f_2$ sont les dentistes (à une constant pvit) de $X$ et $Y$ et $X$ et $Y$ sont indépendantes.
 	\end{enumerate}
 \end{proposition}
 
-\underline{Exercise}
-On a un couple de v.a. $(X, Y)$ à valuers dans $\mathbb{R}^2$ de loi conjointe:
+\underline{Exercice}
+On a un couple de v.a. $(X, Y)$ à valeurs dans $\mathbb{R}^2$ de loi conjointe:
 $$P_{(XY)}(B)=\sum_{k=1}^\infty\sum_{l=1}^\infty \frac{1}{2^{k+l}}\delta_{\{k, l\}}(B)$$
 Determiner la loi de $Z=\sup \{X, Y\}$.
 \begin{enumerate}
-	\item{question}. Determiner $P_X,\ P_Y$ oui $P_X(X=k)$.
-Si $X$ et $Y$ sont discrette $\pro (X=k)=\sum\limits_j\pro (X=k,\ Y=j)$. $$P_X(\{x\}=\sum\limits_j P_{XY}(\{k, j\})$$
+	\item{question}. Déterminer $P_X,\ P_Y$ oui $P_X(X=k)$.
+Si $X$ et $Y$ sont discrète $\pro (X=k)=\sum\limits_j\pro (X=k,\ Y=j)$. $$P_X(\{x\}=\sum\limits_j P_{XY}(\{k, j\})$$
 $$\pro (X=k)=P_X(\{k\})=\sum\limits_{j=1}^\infty \frac{1}{2^{k+j}}$$
 $\pro (Z\leq k)=\pro (X\leq k, Y\leq k)=\int \ind _{[0, k]^2}(X, Y)\dif \pro =\iint \ind _{[0, k]^2} \dif P_{XY}(u, v)=\sum\limits_{i,l=1}^\infty \frac{1}{2^{i+l}}\ind _{[1, k]^2}(i, l)=\sum\limits_{i=1}^k\sum\limits_{l=1}^k\frac{1}{2^{i+l}}$
 \end{enumerate}
 
-\section{Lesson 4} % (fold)
+
+
+
+
+\section{Leçon 4} % (fold)
 \label{sec:lesson_4}
 
-il fallait moutrer que si les variables aliatories $(X_1,\ X_2)$ ont une densiti $f_{X_1X_2}$ produit direct de deux fonctions $f_1$ et $f_2$ , alors a une courtant près, $f_1$ et $f_2$  sont le deuxtè de $X_1$ et $X_2$ et ces deux variables sont independantés.
+Il fallait montrer que si les variables aléatoires $(X_1, X_2)$ ont une densité $f_{X_1X_2}$ produit direct de deux fonctions $f_1$ et $f_2$ , alors a une constante près, $f_1$ et $f_2$  sont le densité de $X_1$ et $X_2$ et ces deux variables sont indépendantes.
 
-L'aut partie (ex.)
+L'autre partie (exercice),
 
-Si $X_1$ et X2 sont indipendant de deuxites respectives $f_{X_1}$ et $f_{X_2}$, alors le vecteur $(X_1,\ X_2)$ a densité: $f_{X_1X_2}=f_{X_1} f_{X_2}$.
+Si $X_1$ et $X_2$ sont indépendant de densités respectives $f_{X_1}$ et $f_{X_2}$, alors le vecteur $(X_1,\ X_2)$ a densité: $f_{X_1X_2}=f_{X_1} f_{X_2}$.
 
 \begin{proof}
-	\underline{Par Hyp}: $f_{X_1X_2}(u, v)=f_{X_1}(u) f_{X_2}(v)$. D'aurt cete on sait que en general:
+	\underline{Par Hyp}: $f_{X_1X_2}(u, v)=f_{X_1}(u) f_{X_2}(v)$. D'art- cette on sait que en général:
 	$$f_{X_1}(u)=\int_{\R}f_{X_1X_2}(u,\ v)\dd{\lambda v}$$
 	$$f_{X_2}(v)=\int_{\R}f_{X_1X_2}(u,\ v)\dd{\lambda u}$$
-	\underline{Objectif}: Montrer que, a une costante pres $f_1=f_{X_1}$, $f_2=f_{X_2}$. On observe que:
-	$$f_{X_1}(u)=\int_{\R}f_{X_1X_2}(u,\ v)\dd{v}=f_1(u)\int_\R f_2(v)\dd{v}$$
+	\underline{Objectif}: Montrer que, a une constante près $f_1=f_{X_1}$, $f_2=f_{X_2}$. On observe que:
+	$$f_{X_1}(u)=\int_{\R}f_{X_1X_2}(u,\ v)\dd{v}=f_1(u)\int_{\R} f_2(v)\dd{v}$$
 	$$f_{X_2}(v)=\int_{\R}f_{X_1X_2}(u,\ v)\dd{u}=f_1(v)\int_\R f_1(u)\dd{u}$$
-	On pultiple les deux expressions:
+	On multiple les deux expressions:
 	$$f_{X_1}(u)f_{X_2}(v)=f_1(u)f_2(v)\int_\R f_2(v)\dd{v}\int_\R f_1(u)\dd{u}=f_1(u)f_2(v)\iint_{\R\times\R} f_2(v) f_1(u)\dd{u}\dd{v}$$
 	Donc on a montré que $f_1(u)f_2(v)=f_{X_1}(u)f_{X_2}(v)$.
-	\begin{remark}
-		à des constants prés on pourra idéntifier $f_{X_1}$ avec $f_1$ et $f_{X_2}$ avec $f_2$. Pourtémniner: La loi du couple $(X_1, X_2)$ $P_{X_1X_2}$ ou sait que pent l'écriré. Notation Si on a ne mesure $P$ avec densite $f$ ou l'écrira coniue sa $P=f\dd{x}$, $P(A)=\int_A f\dd{x}$. $\int g\dd{f}=\int g f\dd{x}$.
-	\end{remark}
-		$$P_{X_1X_2}=f_{X_1X_2}(u, v)\dd{\lambda u}\dd{\lambda v}=f_1(u)f_2(v)\dd{\lambda u}\dd{\lambda v}=f_{X_1}(u)f_{X_2}(v)\dd{\lambda u}\dd{\lambda v}=P_{X_1}\times\circ P_{X_2}$$(product direct des lois marginales)
-
 \end{proof}
 
+	\begin{remark}
+		À des constants prés on pourra identifier $f_{X_1}$ avec $f_1$ et $f_{X_2}$ avec $f_2$. Pour terminer: La loi du couple $(X_1, X_2)$ $P_{X_1X_2}$ on soit que peut l'écrire. 
+		
+		\textbf{Notation,} Si on a une mesure $P$ avec densité $f$ on l'écrira comme ça: $P=f\dd{x}$, $P(A)=\int_A f\dd{x}$. $\int g\dd{f}=\int g f\dd{x}$.
+	\end{remark}
+	
+		$$P_{X_1X_2}=f_{X_1X_2}(u, v)\dd{\lambda u}\dd{\lambda v}=f_1(u)f_2(v)\dd{\lambda u}\dd{\lambda v}=f_{X_1}(u)f_{X_2}(v)\dd{\lambda u}\dd{\lambda v}=P_{X_1}\otimes P_{X_2}$$ (product direct des lois marginales)
+
 \begin{proposition}
-	si $X_1$ et $X_2$ sond deux v.a., cessertious suirvantes sont equivalentes:
+	Si $X_1$ et $X_2$ sont deux v.a., le trois assertions suivantes sont équivalentes:
 	\begin{enumerate}
-		\item $X_1$ et $X_2$ sond independantes
-		\item $\forall$ fonctions $g_1$ et $g_2$ réellact positiones on a:
-			$$\int g_1\circ X_1 \dot g_2\circ X_2\dd{\pro}= \int g_1\circ X_1 \dd{\pro}\int g_2\circ X_2\dd{\pro}$$
-		\item Pur tout fouctions réles bornés, $g_1$ et $g_2$ on a:
-			$$\int g_1\circ X_1 \dot g_2\circ X_2\dd{\pro}= \int g_1\circ X_1 d{\pro}\int g_2\circ X_2\dd{\pro}$$
+		\item $X_1$ et $X_2$ sont indépendantes
+		\item $\forall$ fonctions $g_1$ et $g_2$ réels et positive on a:
+			$$\int g_1\circ X_1 • g_2\circ X_2\dd{\pro}= \int g_1\circ X_1 \dd{\pro}\int g_2\circ X_2\dd{\pro}$$
+		\item Pur tout fonctions réels bornées, $g_1$ et $g_2$ on a:
+			$$\int g_1\circ X_1 • g_2\circ X_2\dd{\pro}= \int g_1\circ X_1 d{\pro}\int g_2\circ X_2\dd{\pro}$$
 	\end{enumerate}
 \end{proposition}
 
-\underline{Applications} Supposons que $g_1$ et $g_2$ sont l'identité et que $X_1$ et $X_2$ sont independantes:
-	$$\mathbb{E}(X_1\dot X_2)=\mathbb{E}(X_1)\times\mathbb{E}(X_2)$$
-	$$\int 1\circ X_1 \dot 2\circ X_2\dd{\pro}= \int 1\circ X_1 d{\pro}\int 2\circ X_2\dd{\pro}$$
+\textbf{Applications.} Supposons que $g_1$ et $g_2$ sont l'identité et que $X_1$ et $X_2$ sont indépendantes:
+	$$\mathbb{E}(X_1• X_2)=\mathbb{E}(X_1)\times\mathbb{E}(X_2)$$
+	$$\int 1\circ X_1 \cdot 2\circ X_2\dd{\pro}= \int 1\circ X_1 d{\pro}\int 1\circ X_2\dd{\pro}$$!?
 	
 \begin{examplebox}
-	$X_1$ et $X_2$ indipendent $\int X_1^2 \sin X_2\dd{\pro}=\int X_1^2 \dd{\pro} \int \sin X_2\dd{\pro}$.
+	$X_1$ et $X_2$ indépendant\\$\int X_1^2 \sin X_2\dd{\pro}=\int X_1^2 \dd{\pro} \int \sin X_2\dd{\pro}$.
 \end{examplebox}
 
 \begin{proof}
 	(Idée) % img 1
 \end{proof}
 
-Si $x_1$ et $X_2$ sont indepts: $\mathbb{V}(X_1+X_2)=\mathbb{V}(X_1)+\mathbb{V}(X_2)$.
-$\mathbb{E}([(X_1=X_2)-\mathbb{e}(X_1+X_2)]^2)$ On developpe ce carré Ondécoucre des ceme du type $\mathbb{E}(X_1X_2)$ On utilisere cete égalité pour définir le fait que 2 variables sont \underline{dicopllies}.
+\begin{remark}
+	Si $x_1$ et $X_2$ sont indépendants: $\mathbb{V}(X_1+X_2)=\mathbb{V}(X_1)+\mathbb{V}(X_2)$.
+	$\mathbb{E}([(X_1=X_2)-\mathbb{e}(X_1+X_2)]^2)$ On développe ce carré.	
+\end{remark}
 
 \begin{examplebox}
-	Sur l'espase probabilite $(\omega, \mathcal{A}, \pro)$ on considere le xouple $(X, Y)$ ave loi conjomte $P_{XY}$ à densite
+	Sur l'espace probabilité $(\omega, \mathcal{A}, \pro)$ on considère le couple $(X, Y)$ ave loi conjomte- $P_{XY}$ à densité
 	$$f_{XY}(u,v)=\alpha(1-u^2)\ind_{[0,1)}(u)v e^{-3v}\ind_{(0, +\infty)}$$
 	\begin{enumerate}
-		\item déterminer le valur de $\alpha$
+		\item déterminer le valeur de $\alpha$
 		\item déterminer la lois marginales.
 	\end{enumerate}
 \end{examplebox}
 
 \begin{examplebox}
-	Sur l'espase $(\Omega,\mathcal{A},\pro)$ ou le vecteru aléatoire $(X, Y)$ de loi
+	Sur l'espace $(\Omega,\mathcal{A},\pro)$ ou le vecteur aléatoire $(X, Y)$ de loi
 	$$P_{XY}=\alpha(\mu_1+\mu_2+\mu_3)$$
-	où $\alpha$ est un parametu ree et $\mu$ est une mesure à densité avec densité:
+	où $\alpha$ est un paramètre et $\mu$ est une mesure à densité avec densité:
 		$$f_1(u, v)=\frac{1}{u^2}e^{-v}\ind_{[1,+\infty)}(u)\ind_{[0, +\infty)}(v)$$
-	$\mu_2$: mesure uniforment distribuée sur $[0,1]\times[0,1]$. $\mu_3=\delta_{\{1,1\}}+\delta{\{-1,2\}}$. Determiner $\alpha$ et le lois marginales de $X$ et de $Y$. Est que $X$ et $Y$ sont independantes?
+	$\mu_2$: mesure uniformément distribuée sur $[0,1]\times[0,1]$. $\mu_3=\delta_{\{1,1\}}+\delta_{\{-1,2\}}$. Déterminer $\alpha$ et le lois marginales de $X$ et de $Y$. Est que $X$ et $Y$ sont indépendantes?
 \end{examplebox}
 % section lesson_4 (end)
 
 \begin{exercise}
-		Soit $(X,Y)$ un vecteur dliatoire à veleurs dans $\R^2$.
+		Soit $(X,Y)$ un vecteur aléatoire à valeurs dans $\R^2$.
 		\begin{enumerate}
 			\item suppose que le loi du couple $(X,Y)$ est connue:
 			$$d_{XY}(u,v)=\lambda \rho e^{-\lambda u - \rho v}\ind_{\R^2_+}(u,v) \dd{u}\dd{v}$$
-			Determiner la loi de la v.a. $W=\min\{X,Y\}$
+			Déterminer la loi de la v.a. $W=\min\{X,Y\}$
 			
-			Deux méthodes (équivalentes). 1 ere méthode: $F_W(t)=\P(W\leq t)=1-\P(W>t)=1-\P(X>t,Y>t)=1-\int\limits_\Omega \ind_{(t,+\infty)}X\cdot \ind_{(t,+\infty)}Y \dd{\pro}=\iint\limits_{\R\times\R} \ind_{(t,+\infty)\times(t,+\infty)}\dd{P_{XY}(u,v)}=\iint\limits_{\R\times\R} \ind_{(t,+\infty)\times(t,+\infty)} \lambda \rho e^{-\lambda u}e^{-\rho v}\dd{u}\dd{v},\ t\geq 0$
+			Deux méthodes (équivalentes). 1ère méthode: $F_W(t)=\pro(W\leq t)=1-\pro(W>t)=1-\pro(X>t,Y>t)=1-\int\limits_\Omega \ind_{(t,+\infty)}X\cdot \ind_{(t,+\infty)}Y \dd{\pro}=\iint\limits_{\R\times\R} \ind_{(t,+\infty)\times(t,+\infty)}\dd{P_{XY}(u,v)}=\iint\limits_{\R\times\R} \ind_{(t,+\infty)\times(t,+\infty)} \lambda \rho e^{-\lambda u}e^{-\rho v}\dd{u}\dd{v},\ t\geq 0$
 $=1-\int_t^\infty \dd{u} \int_t^\infty \dd{v} \lambda \rho e^{-\lambda u} e^{-\rho v}=1-\lambda\int_t^\infty e^{-\lambda}\dd{u} \rho \int_t^\infty e^{-\rho v}\dd{v} = [1-e^{-(\lambda -\rho)t}]\ind_{[0,\infty]}(t)$.
 
 On sait que:
 $$F_W(t)=\int_{-\infty}^tf_W(s)\dd{s}.$$
 Si on connait $f_X$, ou peut calculer $F_W$?
 
-$F$---distribution function (function de repartition).\\
-$f$---probability density function (function de density).
+$F$---distribution function (fonction de repartition).\\
+$f$---probability density function (fonction de densité).
 
 $F'_W(t)=(\lambda+\rho)e^{-(\lambda+\rho)t}$
 Mais $F'_W=(\lambda+\rho)$ from +, but 0 from -0.		
@@ -344,12 +401,12 @@ Il y a 2 cas:\\
 
 Est-ce que $X$ et $Y$ sont indépendantes? Yes. $f_X\cdot f_Y$.
 
-Méthode tris générale pour conotruire des variables aleatorias.
+Méthode tris générale pour construire des variables aléatoires.
 
-On cnstruit une nouvelle v.a. $g\circ X=Y$. \underline{Question} Si on connaît la loi de $X$, peut on calculer la loi de $Y$?
+On construit une nouvelle v.a. $g\circ X=Y$. \underline{Question} Si on connaît la loi de $X$, peut on calculer la loi de $Y$?
 Ex $X$ a nue loi exp: $f_X(u)=\lambda e^{-\lambda u}$; calcules la loi de $\sqrt[2]{X}=Y$.
 
-Couridevous une fouction test non-negative $h:\R\to\R_+$ et ou eousitere:
+Chourinevousm- une fonction test non-négative $h:\R\to\R_+$ et ou eousitere-:
 $$\mathbb{E}(h\circ Y)=\int_\Omega h\circ Y\dd{\pro}=\int_\Omega h\circ g\circ X \dd{P}$$
 $$\int_\Omega h\circ Y\dd{\pro}=\int_\R h(v)f_Y(v)\dd{v}$$
 $$==\int_\R h(g(u))\dd{P_X(u)}=\int_\R h(g(u))f_x(u)\dd{u}$$
@@ -362,9 +419,9 @@ $==2\lambda\int_0^\infty h(v)e^{-\lambda v^2}v\dd{v}$.
 
 Loi de $Y=\sqrt{X}$ est: $f_Y(v)=2\lambda v e^{-\lambda v^2} \ind_{[0,+\infty)}(v)$.
 
-\underline{Deux méthod}
+\underline{Deux méthode}
 
-$\mathbb{E}(h(W))\overset{\mbox{\tiny si on l'ect, comme ca}}{=}=\int_\R h(y)f_W(y)\dd{y}$, $f_W$ la densité de $W$. $h$ -fonction test.
+$\mathbb{E}(h(W))\overset{\mbox{\tiny si on l'est, comme ca}}{=}=\int_\R h(y)f_W(y)\dd{y}$, $f_W$ la densité de $W$. $h$ -fonction test.
 
 $\mathbb{E}(h(W))=\int_\Omega h\circ W\dd{\pro} = \int_\Omega h\circ \min(X,Y)\dd{\pro}=\iint_{\R\times\R}h(\min(u,v))\lambda e^{-\lambda u}\rho e^{-\rho v}\dd{u}\dd{v}= 
 \iint\limits_{\{(u,v), u<v\}}h(u)\lambda e^{-\lambda u}\rho e^{-\rho v}\dd{u}\dd{v}+\iint\limits_{\{(u,v), u>v\}}h(u)\lambda e^{-\lambda u}\rho e^{-\rho v}\dd{u}\dd{v}=
@@ -376,9 +433,9 @@ $\mathbb{E}(h(W))=\int_\Omega h\circ W\dd{\pro} = \int_\Omega h\circ \min(X,Y)\d
 
 \end{exercise}
 
-On a un vecteur aliatoire $(X,Y)$ a valeurs dans $\R^2$, avec loi:
+On a un vecteur aléatoire $(X,Y)$ a valeurs dans $\R^2$, avec loi:
 $$f_{XY}(u,v)= \frac1{4\pi} e^{-\frac u2}\ind_{\{u\geq 0\}} \ind_{[0,2\pi]}$$
-Determiner loi du vecteur aliatoire $(\sqrt X \cos Y, \sqrt X \sin Y)$.
+Déterminer loi du vecteur aléatoire $(\sqrt X \cos Y, \sqrt X \sin Y)$.
 
 $\omega\rightarrow(X(\omega),Y(\omega))$
 
@@ -396,20 +453,23 @@ $g=(g_1,g_2)$
 $\mathbb{E}(h\circ (X,Y))=\int h\circ (X,Y)\dd{\pro}=\iint h(g(u,v))f_{XY}(u,v)\dd{u} \dd{v}=\iint h(g_1(u,v),g_2(u,v))f_{XY}(u,v)\dd{u} \dd{v} \overset{?}{=} \int h(\alpha,\beta)f(\alpha, \beta)\dd{\alpha}\dd{\beta}$	
 
 
-\section{lesson}
 
-$(X,Y)$ 2 v.a. et euxute ou avcit une fouction vectoriélle $g=(g_1,g_2)$ $g:\R^2\rightarrow\R^2$ et on difinit 2 nouvelle v.a. $U$ et $V$ de cette façon:
+
+
+\section{leçon}
+
+$(X,Y)$ 2 v.a. et exulte ou avait une fonction vectorielle $g=(g_1,g_2)$ $g:\R^2\rightarrow\R^2$ et on définit 2 nouvelle v.a. $U$ et $V$ de cette façon:
 $U=g_1\circ (X,Y)$, $V=g_2\circ (X,Y)$ et
-$$\left\{\begin{array}{ccc}U(\omega)&=g_1(X(\omega),Y(\omega))\\V(\omega)&=g_2(X(\omega),Y(\omega))\end{array}\right.,\ \omega\in\Omega\text{ (espace des elements)}$$
+$$\left\{\begin{array}{ccc}U(\omega)&=g_1(X(\omega),Y(\omega))\\V(\omega)&=g_2(X(\omega),Y(\omega))\end{array}\right.,\ \omega\in\Omega\text{ (espace des éléments)}$$
 
 %img arrows r^2
 
-Cas particuler (Exercice)
-$(X,Y)$ une couple de v.a. de loi  cougointe:;
+Cas particulier (Exercice)
+$(X,Y)$ une couple de v.a. de loi  cougointe-
 $$f_{XY}=\frac1{4\pi}e^{-\frac u2}\ind_{u\geq 0}(u)\ind_{[0,2\pi]}(v)\dd{u}\dd{v}$$
 Question: Trouver la loi du couple:
 $$(\sqrt{X}\cos Y, \sqrt X\sin Y)=(U,V)$$
-Sait $h:\R^2\rightarrow \R$ une fonction test non-negative.
+Sait $h:\R^2\rightarrow \R$ une fonction test non-négative.
 
 $\E(h\circ g(X,Y))=\int_\Omega h\circ g(X,Y)\dd{\pro}=\iint\limits_{\R^2}h(g_1(x,y), g_2(x,y))f_{XY}(x,y)\dd{x} \dd{y}\overset{?}{=}\iint\limits_{\R^2}h(u,v)f_{UV}(u,v)\dd{u} \dd{v}$
 
@@ -417,68 +477,204 @@ $$\left\{\begin{array}{ccc}u=\sqrt x \cos y\\ v=\sqrt x \sin y\end{array}\right.
 
 $$g: \left\{ \begin{array}{ccc}u&=&g_1(x,y)\\v&=&g_2(x,y)\end{array} \right.$$
 
-$g=(g_1,g_2)$. Pour povoir effectuer un changement de variable, il faut que $g$ soiit un \underline{diffeomorphism} entre 2 ouverts.
+$g=(g_1,g_2)$. Pour pouvoir effectuer un changement de variable, il faut que $g$ soit un \underline{difféomorphisme} entre 2 ouverts.
 % img omega 
 
-$g:\mathcal O_1\rightarrow \mathcal O_2$ diffeomorphism cutu deux ouverts. Coudition equivalents pour avoir un diffeomorphism:
+$g:\mathcal O_1\rightarrow \mathcal O_2$ difféomorphisme cute deux ouverts. Condition équivalents pour avoir un difféomorphisme:
 \begin{enumerate}
 	\item $g$ est injective sur $\mathcal O_1$ à valeurs dans $\mathcal O_2$.
-	\item $g$ est de classe $b^{(1)}(\mathcal O_1)$, c'est-à dire les deciver peut eller de $g$ existe tout caitunes.
-	\item Le determinant de $(g\dmo)'\neq 0$ sur$\mathcal O_2$
+	\item $g$ est de classe $b^{(1)}(\mathcal O_1)$, c'est-à dire les deciver- peut eller- de $g$ existe tout caitunes-.
+	\item Le déterminant de $(g\dmo)'\neq 0$ sur$\mathcal O_2$
 \end{enumerate}
 
-Nous son defini
+Nous son défini
 
 $$g: \left\{ \begin{array}{ccc}u&=&g_1(x,y)\\v&=&g_2(x,y)\end{array} \right.\overset{\mbox{il faut inverser}}{\rightarrow}$$
 $$g\dmo: \left\{ \begin{array}{ccc}x&=&\Phi_1(u,v)\\y&=&\Phi_2(u,v)\end{array} \right.$$
 $\Phi=(\Phi_1,\Phi_2)$
 
-On coustruit la invative Jacobienne (derives) de $g\dmo=\Phi$:
+On construit la invariante Jacobienne (dérives) de $g\dmo=\Phi$:
 
 $$J_\Phi(u,v)=\mqty(\pdv{\Phi_1}{u}&\pdv{\Phi_1}{v}\\\pdv{\Phi_2}{u}&\pdv{\Phi_2}{v})$$
 $$|\det J_\Phi (u,v)|$$
 
 $$=\iint\limits_{g(O_1)=O_2}h(u,v)f_{XY}(\Phi_1(u,v),\Phi_2(u,v))|\det J_\Phi (u,v)|\dd{u}\dd{v}$$
 
-Trouve le nouvelle domain d'integration.
+Trouve le nouvelle domaine d'intégration.
 
-La densiti de $(U,V)$ est donc:
+La densité de $(U,V)$ est donc:
 $$f_{UV}(u,v)=f_{XY}(\Phi_1(u,v),\Phi_2(u,v))\cdot |\det J_\Phi(u,v)|\cdot \ind_{g(\mathcal O_1)}(u,v)$$
 
 
 Continue with exercice:
 
-$\iint_{0\ 0}^{\infty\ 2\pi} h(\sqrt x \cos y,\sqrt x \sin y)\frac 1{4\pi}e^{-\frac x2}\dd{x}\dd{y}$
+$\iint_{0\ 0}^{\infty\ 2\pi} h(\sqrt x \cos y,\sqrt x \sin y)\frac 1{4\pi}e^{-\frac x2}\dd{x}\dd{y}=$
 
 $$g:\ \left\{\begin{array}{ccc}u=\sqrt x \cos y\\ v=\sqrt x \sin y\end{array}\right.$$
 
-$\Rightarrow \Phi: \left\{\begin{array}{ccc}x=u^2+v^2 \\ y=\arctan(\frac vu) \end{array}\right.$
+$\Rightarrow \Phi: \left\{\begin{array}{rcl}x&=&u^2+v^2 \\ y&=&\arctan(\frac vu) \end{array}\right.$
 
 
-$=\iint\limits_{\R\times\R}=\dd u\dd v h(u,v) \frac 1{4\pi}e^{\frac{-(u^2+v^2)}2}\cdot |\det J_\Phi (u,v)|$
+$=\iint\limits_{\R\times\R}\dd{u}\dd{v} h(u,v) \frac 1{4\pi}e^{\frac{-(u^2+v^2)}2}\cdot |\det J_\Phi (u,v)|$
 
 $$J_\Phi(u,v)=\left(\begin{array}{cc}2u&2v\\ \frac{-v}{u^2+v^2}&\frac u{u^2+v^2}\end{array}\right)$$
-$\det J_\Phi (u,v)=\frac{2u^2}{u^2+v^2}+\frac{2v^2}{u^2+v^2}$
+$\det J_\Phi (u,v)=\frac{2u^2}{u^2+v^2}+\frac{2v^2}{u^2+v^2}=2$
 
 Question:
 \begin{itemize}
-	\item $U$ et $V$ sont independent? Oui car $f=f1\cdot f2$
+	\item $U$ et $V$ sont indépendant? Oui car $f=f_1•f_2$
 	\item Lui de $U$ et $V$:
 	$\frac 1{\sqrt 2\pi}e^{\frac{-(u^2+v^2)}2}$ et $\frac 1{\sqrt 2\pi}e^{\frac{-(u^2+v^2)}2}$
 \end{itemize}
 
 Exercice
-Soit $(X,Y)$ une vecteur aliatoire de loi $f_{XY}(x,y)=\frac 1{2\pi}e^{-\frac{x^2+y^2}2}$. Calculer la loi de $(X+Y,Y)$.
-Objectiv calcul la lua de la summe.
+Soit $(X,Y)$ une vecteur aléatoire de loi $f_{XY}(x,y)=\frac 1{2\pi}e^{-\frac{x^2+y^2}2}$. Calculer la loi de $(X+Y,Y)$.
+Objectif calcul la lui de la somme.
 
 $$\iint_{\R^2}h(x+y, y)\frac 1{2\pi}e^{-\frac{x^2+y^2}2}\dd x\dd y$$
-$$g: \left\{ \begin{array}{ccc}u&=&g_1(x,y)=x+y\\v&=&g_2(x,y)=y\end{array} \right.$$
+$$g: \left\{ \begin{array}{ccccc}u&=&g_1(x,y)&=&x+y\\v&=&g_2(x,y)&=&y\end{array} \right.$$
 $$\Phi: \left\{ \begin{array}{ccc}x&=&u-v\\y&=&v\end{array} \right.$$
 $$\abs{\det J_\Phi (u,v)}=1$$
 $$=\iint_{\R\times\R}h(u,v)\frac{1}{2\pi}e^{-\frac{(u-v)^2+v^2}{2}}\dd u\dd v$$
-Densiti de $(X+Y,Y)$ est $\frac{1}{2\pi}e^{-\frac{u^2-2uv+2v^2}{2}}$.
-Densiti de $(X+Y)$:
+Densité de $(X+Y,Y)$ est $\frac{1}{2\pi}e^{-\frac{u^2-2uv+2v^2}{2}}$.
+Densité de $(X+Y)$:
 $$f_U(u)=\int_{-\infty}^\infty f_{UV}(u,v)\dd v=\frac 1{2\pi}\int_{-\infty}^\infty e^{-\frac 12(u^2-2uv+2v^2)}\dd v$$
 ---produit de convolution.
 
-Si $X$ et $Y$ sont independant de loi marginal $f_X$ et $f_Y$ alors la v.a. X+Y est à densitè est $f_{X+Y}(u)=\int_\R f_Y(u)\cdot f_X(u-v)\dd v\overset{\mbox{def}}{=}f_Y\ast f_X$---produit de convolution.
+Si $X$ et $Y$ sont indépendant de loi marginal $f_X$ et $f_Y$ alors la v.a. X+Y est à densité est $f_{X+Y}(u)=\int_\R f_Y(u)\cdot f_X(u-v)\dd v\overset{\mbox{\tiny def}}{=}f_Y\ast f_X$---produit de convolution.
+
+
+\begin{exercise}
+	Soit (U,V) un couple de variables aléatoires de densité conjointe:
+	$$f_{UV}(u,v)=\left\{\begin{array}{l}γ(2u^2v+1), (v,v)\in D\\ 0 \text{, ailleurs}\end{array}\right.$$
+	où $D=\{(u,v)\in \R^2\ |\ |u|<1, |u-1|<1\}$.
+
+	\textbf{Questions.}
+	\begin{enumerate}
+		\item déterminer la valeur de $γ$
+		\item déterminer si $(U,V)$ sont \emph{indépendantes}
+		\item déterminer si $(U,V)$ sont \emph{corrélées} 
+		\item déterminer la loi du couple $(A,B)$: où $A=U•V,\ B=V$
+	\end{enumerate}
+	
+	$h$: fonction test:
+	$\int h(A,B)\dd{\pro}=\int h(U•V,V)\dd{\pro}=\iint_D h(uv,v)f_{UV}(u,v)\dd{u}\dd{v}=\iint_{D'}h(a,b)f(...)\dd a\dd b$
+	$$J_{g\dmo}(a,b)=\mqty(\frac 1b&-\frac a{b^2}\\0&1)$$
+	$$g:\left\{ \begin{array}{l}a=uv\\b=v\end{array}\right.\ g\dmo:\left\{ \begin{array}{l}u=\frac ab\\v=b\end{array}\right.$$
+	$|\det J_{g\dmo}|=\frac 1b$
+	$=\frac 3{20}\iint_{D'=g(D)}h(a,b)(2\frac {a^2}b+1)\frac 1b\dd a\dd b$
+	=> $f_{AB}(a,b)=\frac 3{20}(2\frac {a^2}b+1)\frac 1b\ind_{D'}(a,b)$
+	Draw $D'=g(D)=\{(a,b), b\in [0,2]\ -b<a<b\}$
+	Is it difféomorphisme?
+	Yes, car ...
+\end{exercise}
+
+\begin{definition}
+	Si $X$ et $Y$ sont $2$ v.a. ou définit la \textsc{Covariance} entre $X$ et $Y$ comme
+	$\cov(X,Y)\overset{\text{def}}{=}\E\left[(X-\E(X))(Y-\E(Y))\right]=\E(XY)-\E(X)\E(Y)$.
+\end{definition}
+
+\begin{exercise}
+	Soit $X$ une v.a. de loi $N(0,1)$ et $Y$ une v.a. discrète de loi $\frac 12\{δ_{(-1)}+δ_{1}\}$ indépendante de $X$.
+	\begin{itemize}
+		\item Montrer que la loi de $Z=X•Y$ est $N(0,1)$ 
+		\item Montrer que $(X,Z)$ ne sont pas corrélées 
+		\item Calculer $\E(X^2Z^2)$
+		\item Déterminer si $(X,Z)$ sont indépendantes
+	\end{itemize}
+	
+	Loi de $Z$.
+	
+	$F(t)=\pro(Z≤t)=\int_\R \ind_{\{x•y≤t\}}(x•y)\dd{P_{XY}(x,y)}\overset{indépendantes}{=}$ $\int\int \ind_{\{x•y≤t\}}(x•y)\dd{P_Y}\dd{P_X}$ $=\int \dd{P_X}(\frac 12 \ind_{-x≤t}(-x)+\frac 12 \ind_{+x≤t}(x))=\frac 1{\sqrt 2\pi}\int \dd{x}e^{-\frac{x^2}2}(\frac 12 \ind_{-x≤t}(-x)+\frac 12 \ind_{+x≤t}(x))$ $+\frac 1{\sqrt 2\pi} \frac 12 \int_{-∞}^t\dd x e^{-x^2/2}+\frac 1{\sqrt 2\pi} \frac 12 \int_{-t}^∞\dd x e^{-x^2/2}=\frac 12 \int_∞^t e^{-\frac{x^2}2}\dd{x}\simeq N(0,1)$
+\end{exercise}
+
+\begin{exercise}
+	Soient $X$ et $Y$ deux va indépendantes dont $X$ est un variable de Bernoulli $B(1/2)$ et $Y$ suivra deux lois 
+	i $Y$ est une variable normale $N(0,1)$ 
+	ii $Y$ a fonction de répartition $F_y(t)=t t\in [0,1]$. Dans les deux cas calculer la fonction de répartition $Z=X•Y$.
+\end{exercise}
+
+
+\section{Fonction génératrice} % (fold)
+\label{sec:donction_generatrice}
+$X$ set une v.a. discrète a valeurs dans $\N\cup\{0\}$ 
+
+Ex
+Bernoulli $(0,1)$ $B(p)$ $P_X=(1-p)δ_0+pδ_1$
+Binomiale $B(n,l)$ valeurs $1,...,N$ $\pro(x=k)=C_n^kp^k(1-p)^{N-k}$
+Géométrique
+Valeurs de $G=\{0,1,2,...\}$ $\pro(G=k)(1-p)^{k-1}p$
+Poisson valeurs $0,1,2, ...$  $\pro (p=k)=\frac {e^{-λ}λ^k}{k!}$
+
+Résultat très intéressant
+Binomiale $N$ très grand $p$ très petite $N•p=O(1)$
+$\pro (X=k)=C_n^kp^k(1-p)^{N-k}~G(N•p)$
+
+\begin{definition}
+\textsc{Fonction Génératrice} de $X$:
+$$g_x(s)=∑_{i=0}^{+∞} p_is^i $$
+(série entière, "power" séries), où la loi de $X$ est $P_X=∑_{i=0}^∞p_iδ_{\{i\}}$.	
+\end{definition}
+
+
+\begin{proposition}
+	Si on connait $g_X(s)$ on connaît la loi, c-a-d les $\{p_i\}_{i=0}^∞$.
+\end{proposition}
+
+\begin{proof}
+	D'abord la série converge pour $s\in[-1,1]$ et uniformément pour $s\in (-1,1)$. La série peut être dérivée terme-à-terme pour $s\in (-1,1)$. $g'_X(s)=∑^∞_{i=1}p_iis^{t-1}\ g''_X(s)=∑^∞_{i=2}p_ii(i-1)s^{t-1}\ g^{(k)}_X(s)=∑^∞_{i=k}p_ii(i-1)...(i-k+1)s^{i-k}$
+	On calcul $g^{(k)}(0)$.
+	$$p_k=\frac{g^{(k)}(0)}{k!}$$
+\end{proof}
+
+	
+	Attention. $g_X(s)-∑^∞){i-0}p_is^i$
+	
+	On dérive $g'_X(s)=∑^∞_{i=1}p_iis^{i-1}$
+	Supposons qu'on puisse étendre la denrée dans $s=1$
+	$g'_X(1)=∑^∞p_ii=\E(X)$
+	Application. 
+	
+	$X$ v.a. $B(N,p)$
+	$\E(x)=∑^N_{k=0}kC_N^kp^k(1-p)^{N-k}=?Np$
+	On utilise la fonction génératrice:
+	$g_X(s)==∑^N_{k=0}C_N^kp^k(1-p)^{N-k}s^k= ∑C_n^k(ps)^k(1-p)^{N-k}=[ps+(1-p)]^N$
+	
+	$g'_X(s)|_{s=1}=N[p+(1-p)]^{N-1}•p|_{s=1}=Np$
+	
+	X v.a. Poisson
+	$\E(P)=λ$
+	$\E(P)=∑_{k=0}^∞ k\frac{λ^ke^{-λ}}{k!}$
+	$g_P=∑_{k=0}^∞...=e^-λ e^λs $
+
+\begin{lemme}(Abel)
+	\begin{enumerate}
+		\item Si la série $∑^∞_{i=0}α_i=α$ alors $lim_{s\to 1^-}∑_{i=0}^∞ α_is^i=α$
+		\item Si les $α_i$ sont positifs et si $\lim_{s\to 1^-}∑_{i=0}^∞ α_is^i=α<+∞$, alors $∑_{i=0}^∞α_i=α.$
+	\end{enumerate}
+\end{lemme}
+
+\begin{proof}
+$g_X(s)=∑_{i=0}^∞p_is^i$
+(1) Supposons que $\E(X)<+∞$ <=> $∑_{i=0}^∞ ip_i=\E(X)$
+donc on est dans la partie 1 du Lemme
+Donc 
+$$\lim_s\to1^-∑_{i=0}^∞ip_i s^i=\E(X)=lim s\to 1^- g;_x(s)$$	
+\end{proof}
+
+
+\begin{proposition}
+	On a $\E(X(X-1)...(X-r+1))=\lim_{s\to 1^-}g_X^{(r)}(s):=g_X^{(r)}(1)$.
+	Cas particulier $\V(X)=g_X''(1)+g'(1)-[g'_X(1)]^2$
+\end{proposition}
+
+\subsection{Fonction génératrice des moments} % (fold)
+\label{sub:subsection_name}
+
+\ifcomment
+% subsection subsection_name (end)
+
+Χ une v.a. quelconque $u\in \R G_X(u)=\E(e^{uX}) =\int_Ωe^{uX}\dd{\pro}=\int_\R e^{uX}\dd{}$
+% section donction_generatrice (end)
+
+\fi
