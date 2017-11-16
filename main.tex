@@ -302,14 +302,12 @@ $\pro (Z\leq k)=\pro (X\leq k, Y\leq k)=\int \ind _{[0, k]^2}(X, Y)\dif \pro =\i
 \section{Leçon 4} % (fold)
 \label{sec:lesson_4}
 
-Il fallait montrer que si les variables aléatoires $(X_1, X_2)$ ont une densité $f_{X_1X_2}$ produit direct de deux fonctions $f_1$ et $f_2$ , alors a une constante près, $f_1$ et $f_2$  sont le densité de $X_1$ et $X_2$ et ces deux variables sont indépendantes.
+Il fallait montrer que si les variables aléatoires $(X_1, X_2)$ ont une densité $f_{X_1X_2}$ produit direct de deux fonctions $f_1$ et $f_2$ , alors à une constante près, $f_1$ et $f_2$  sont le densité de $X_1$ et $X_2$ et ces deux variables sont indépendantes. 
 
-L'autre partie (exercice),
-
-Si $X_1$ et $X_2$ sont indépendant de densités respectives $f_{X_1}$ et $f_{X_2}$, alors le vecteur $(X_1,\ X_2)$ a densité: $f_{X_1X_2}=f_{X_1} f_{X_2}$.
+\emph{L'autre partie} (exercice). Si $X_1$ et $X_2$ sont indépendantes de densité respectives $f_{X_1}$ et $f_{X_2}$, alors le vecteur $(X_1,\ X_2)$ a densité: $f_{X_1X_2}=f_{X_1} f_{X_2}$.
 
 \begin{proof}
-	\underline{Par Hyp}: $f_{X_1X_2}(u, v)=f_{X_1}(u) f_{X_2}(v)$. D'art- cette on sait que en général:
+	\emph{Par hypothèse}, $f_{X_1X_2}(u, v)=f_{X_1}(u) f_{X_2}(v)$. D'autre coté on sait que en général:
 	$$f_{X_1}(u)=\int_{\R}f_{X_1X_2}(u,\ v)\dd{\lambda v}$$
 	$$f_{X_2}(v)=\int_{\R}f_{X_1X_2}(u,\ v)\dd{\lambda u}$$
 	\underline{Objectif}: Montrer que, a une constante près $f_1=f_{X_1}$, $f_2=f_{X_2}$. On observe que:
@@ -317,47 +315,49 @@ Si $X_1$ et $X_2$ sont indépendant de densités respectives $f_{X_1}$ et $f_{X_
 	$$f_{X_2}(v)=\int_{\R}f_{X_1X_2}(u,\ v)\dd{u}=f_1(v)\int_\R f_1(u)\dd{u}$$
 	On multiple les deux expressions:
 	$$f_{X_1}(u)f_{X_2}(v)=f_1(u)f_2(v)\int_\R f_2(v)\dd{v}\int_\R f_1(u)\dd{u}=f_1(u)f_2(v)\iint_{\R\times\R} f_2(v) f_1(u)\dd{u}\dd{v}$$
+	Or 
+	$$ \int_\R f_2(v)\dd{v}\int_\R f_1(u)\dd{u}=\iint_{\R\times\R} f_2(v) f_1(u)\dd{u}\dd{v}=\iint_{\R\times\R} f_{X_1,X_2}(u,v)\dd{u}\dd{v}=1,$$
+	car $f_{X_1,X_2}$ est une densité de probabilité.
 	Donc on a montré que $f_1(u)f_2(v)=f_{X_1}(u)f_{X_2}(v)$.
-\end{proof}
-
 	\begin{remark}
-		À des constants prés on pourra identifier $f_{X_1}$ avec $f_1$ et $f_{X_2}$ avec $f_2$. Pour terminer: La loi du couple $(X_1, X_2)$ $P_{X_1X_2}$ on soit que peut l'écrire. 
-		
-		\textbf{Notation,} Si on a une mesure $P$ avec densité $f$ on l'écrira comme ça: $P=f\dd{x}$, $P(A)=\int_A f\dd{x}$. $\int g\dd{f}=\int g f\dd{x}$.
+		À des constants prés on pourra identifier $f_{X_1}$ avec $f_1$ et $f_{X_2}$ avec $f_2$. Pour terminer: La loi du couple $(X_1, X_2)$ $P_{X_1X_2}$ on sait que on peut l'écrire. 
 	\end{remark}
+\end{proof}	
+\begin{notations}
+	Si on a une mesure $P$ avec densité $f$ on l'écrira comme ça: $P=f\dd{x}$, 	$P(A)=\int_A f\dd{x}$. $\int g\dd{f}=\int g f\dd{x}$.
 	
-		$$P_{X_1X_2}=f_{X_1X_2}(u, v)\dd{\lambda u}\dd{\lambda v}=f_1(u)f_2(v)\dd{\lambda u}\dd{\lambda v}=f_{X_1}(u)f_{X_2}(v)\dd{\lambda u}\dd{\lambda v}=P_{X_1}\otimes P_{X_2}$$ (product direct des lois marginales)
+		$$P_{X_1X_2}=f_{X_1X_2}(u, v)\dd{\lambda (u)}\dd{\lambda (v)}=f_1(u)f_2(v)	\dd{\lambda (u)}\dd{\lambda (v)}=f_{X_1}(u)f_{X_2}(v)\dd{\lambda (u)}\dd{\lambda (v)}=P_{X_1}\otimes P_{X_2}$$ (product direct des lois marginales).
+		
+		$P_{X_1X_2}=P_{X_1}\otimes P_{X_2}$ produit directe de lois marginales. Et on sait que C.N.S\question{what} pour l'independence est que $P_{X_1X_2}=P_{X_1}\otimes P_{X_2}$.
+\end{notations}
 
 \begin{proposition}
 	Si $X_1$ et $X_2$ sont deux v.a., le trois assertions suivantes sont équivalentes:
 	\begin{enumerate}
 		\item $X_1$ et $X_2$ sont indépendantes
 		\item $\forall$ fonctions $g_1$ et $g_2$ réels et positive on a:
-			$$\int g_1\circ X_1 • g_2\circ X_2\dd{\pro}= \int g_1\circ X_1 \dd{\pro}\int g_2\circ X_2\dd{\pro}$$
+			$$\int g_1\circ X_1 • g_2\circ X_2\dd{\pro}= \int g_1\circ X_1 \dd{\pro}•\int g_2\circ X_2\dd{\pro}$$
 		\item Pur tout fonctions réels bornées, $g_1$ et $g_2$ on a:
-			$$\int g_1\circ X_1 • g_2\circ X_2\dd{\pro}= \int g_1\circ X_1 d{\pro}\int g_2\circ X_2\dd{\pro}$$
+			$$\int g_1\circ X_1 • g_2\circ X_2\dd{\pro}= \int g_1\circ X_1 \dd{\pro}•\int g_2\circ X_2\dd{\pro}$$
 	\end{enumerate}
 \end{proposition}
 
 \textbf{Applications.} Supposons que $g_1$ et $g_2$ sont l'identité et que $X_1$ et $X_2$ sont indépendantes:
-	$$\mathbb{E}(X_1• X_2)=\mathbb{E}(X_1)\times\mathbb{E}(X_2)$$
-	$$\int 1\circ X_1 \cdot 2\circ X_2\dd{\pro}= \int 1\circ X_1 d{\pro}\int 1\circ X_2\dd{\pro}$$!?
+	$$\mathbb{E}(X_1• X_2)=\mathbb{E}(X_1)•\mathbb{E}(X_2)$$
+	$$\int 1\circ X_1 \cdot 1\circ X_2\dd{\pro}= \int 1\circ X_1 \dd{\pro}•\int 1\circ X_2\dd{\pro}.$$
 	
 \begin{examplebox}
 	$X_1$ et $X_2$ indépendant\\$\int X_1^2 \sin X_2\dd{\pro}=\int X_1^2 \dd{\pro} \int \sin X_2\dd{\pro}$.
 \end{examplebox}
 
-\begin{proof}
-	(Idée) % img 1
-\end{proof}
-
 \begin{remark}
-	Si $x_1$ et $X_2$ sont indépendants: $\mathbb{V}(X_1+X_2)=\mathbb{V}(X_1)+\mathbb{V}(X_2)$.
-	$\mathbb{E}([(X_1=X_2)-\mathbb{e}(X_1+X_2)]^2)$ On développe ce carré.	
+	Si $X_1$ et $X_2$ sont indépendants: $\mathbb{V}(X_1+X_2)=\mathbb{V}(X_1)+\mathbb{V}(X_2)$.
+	
+	$\mathbb{E}([(X_1=X_2)-\mathbb{e}(X_1+X_2)]^2)$.On développe le carré on découvera des termes de type $\E(X_1X_2)$, on utilisera l'égalité $\mathbb{E}(X_1• X_2)=\mathbb{E}(X_1)•\mathbb{E}(X_2)$ \question{pour définis le fait que 2 variables sont de corrélées}
 \end{remark}
 
 \begin{examplebox}
-	Sur l'espace probabilité $(\omega, \mathcal{A}, \pro)$ on considère le couple $(X, Y)$ ave loi conjomte- $P_{XY}$ à densité
+	Sur l'espace probabilité $(\Omega, \mathcal{A}, \pro)$ on considère le couple $(X, Y)$ ave loi conjomte- $P_{XY}$ à densité
 	$$f_{XY}(u,v)=\alpha(1-u^2)\ind_{[0,1)}(u)v e^{-3v}\ind_{(0, +\infty)}$$
 	\begin{enumerate}
 		\item déterminer le valeur de $\alpha$
@@ -366,22 +366,26 @@ Si $X_1$ et $X_2$ sont indépendant de densités respectives $f_{X_1}$ et $f_{X_
 \end{examplebox}
 
 \begin{examplebox}
-	Sur l'espace $(\Omega,\mathcal{A},\pro)$ ou le vecteur aléatoire $(X, Y)$ de loi
+	Sur l'espace $(\Omega,\mathcal{A},\pro)$ on a à nouveau le vecteur aléatoire $(X, Y)$ de loi 
 	$$P_{XY}=\alpha(\mu_1+\mu_2+\mu_3)$$
-	où $\alpha$ est un paramètre et $\mu$ est une mesure à densité avec densité:
-		$$f_1(u, v)=\frac{1}{u^2}e^{-v}\ind_{[1,+\infty)}(u)\ind_{[0, +\infty)}(v)$$
-	$\mu_2$: mesure uniformément distribuée sur $[0,1]\times[0,1]$. $\mu_3=\delta_{\{1,1\}}+\delta_{\{-1,2\}}$. Déterminer $\alpha$ et le lois marginales de $X$ et de $Y$. Est que $X$ et $Y$ sont indépendantes?
+	où $\alpha$ est un paramètre et\\
+	$\mu$ est une mesure à densité avec densité:
+		$f_1(u, v)=\frac{1}{u^2}e^{-v}\ind_{[1,+\infty)}(u)\ind_{[0, +\infty)}(v)$\\
+	$\mu_2$: mesure uniformément distribuée sur $[0,1]\times[0,1]$.\\
+	$\mu_3=\delta_{\{1,1\}}+\delta_{\{-1,2\}}$. 
+	
+	Déterminer $\alpha$ et le lois marginales de $X$ et de $Y$. Est que $X$ et $Y$ sont indépendantes?
 \end{examplebox}
-% section lesson_4 (end)
 
 \begin{exercise}
 		Soit $(X,Y)$ un vecteur aléatoire à valeurs dans $\R^2$.
-		\begin{enumerate}
+		\begin{enumerate}[(i)]
 			\item suppose que le loi du couple $(X,Y)$ est connue:
 			$$d_{XY}(u,v)=\lambda \rho e^{-\lambda u - \rho v}\ind_{\R^2_+}(u,v) \dd{u}\dd{v}$$
 			Déterminer la loi de la v.a. $W=\min\{X,Y\}$
 			
-			Deux méthodes (équivalentes). 1ère méthode: $F_W(t)=\pro(W\leq t)=1-\pro(W>t)=1-\pro(X>t,Y>t)=1-\int\limits_\Omega \ind_{(t,+\infty)}X\cdot \ind_{(t,+\infty)}Y \dd{\pro}=\iint\limits_{\R\times\R} \ind_{(t,+\infty)\times(t,+\infty)}\dd{P_{XY}(u,v)}=\iint\limits_{\R\times\R} \ind_{(t,+\infty)\times(t,+\infty)} \lambda \rho e^{-\lambda u}e^{-\rho v}\dd{u}\dd{v},\ t\geq 0$
+			\textbf{Deux méthodes} (équivalentes).
+			\\1ère méthode: $F_W(t)=\pro(W\leq t)=1-\pro(W>t)=1-\pro(X>t,Y>t)=1-\int\limits_\Omega \ind_{(t,+\infty)}X\cdot \ind_{(t,+\infty)}Y \dd{\pro}=\iint\limits_{\R\times\R} \ind_{(t,+\infty)\times(t,+\infty)}\dd{P_{XY}(u,v)}=\iint\limits_{\R\times\R} \ind_{(t,+\infty)\times(t,+\infty)} \lambda \rho e^{-\lambda u}e^{-\rho v}\dd{u}\dd{v},\ t\geq 0$
 $=1-\int_t^\infty \dd{u} \int_t^\infty \dd{v} \lambda \rho e^{-\lambda u} e^{-\rho v}=1-\lambda\int_t^\infty e^{-\lambda}\dd{u} \rho \int_t^\infty e^{-\rho v}\dd{v} = [1-e^{-(\lambda -\rho)t}]\ind_{[0,\infty]}(t)$.
 
 On sait que:
@@ -448,29 +452,21 @@ $g=(g_1,g_2)$
  U vecteur: $(g_1\circ (X,Y), g_2\circ (X,Y))$.
  
  Test fonction $h$, $h:\R^2\rightarrow \R$.
-
-$\mathbb{E}(h\circ (X,Y))=\int h\circ (X,Y)\dd{\pro}=\iint h(g(u,v))f_{XY}(u,v)\dd{u} \dd{v}=\iint h(g_1(u,v),g_2(u,v))f_{XY}(u,v)\dd{u} \dd{v} \overset{?}{=} \int h(\alpha,\beta)f(\alpha, \beta)\dd{\alpha}\dd{\beta}$	
-
-
-
-
-
-\section{leçon}
+\begin{multline}
+\mathbb{E}(h\circ (X,Y))=\int h\circ (X,Y)\dd{\pro}=\iint h(g(u,v))f_{XY}(u,v)\dd{u} \dd{v}\\=\iint h(g_1(u,v),g_2(u,v))f_{XY}(u,v)\dd{u} \dd{v} \overset{?}{=} \int h(\alpha,\beta)f(\alpha, \beta)\dd{\alpha}\dd{\beta}
+\end{multline}
 
 $(X,Y)$ 2 v.a. et exulte ou avait une fonction vectorielle $g=(g_1,g_2)$ $g:\R^2\rightarrow\R^2$ et on définit 2 nouvelle v.a. $U$ et $V$ de cette façon:
 $U=g_1\circ (X,Y)$, $V=g_2\circ (X,Y)$ et
 $$\left\{\begin{array}{ccc}U(\omega)&=g_1(X(\omega),Y(\omega))\\V(\omega)&=g_2(X(\omega),Y(\omega))\end{array}\right.,\ \omega\in\Omega\text{ (espace des éléments)}$$
 
-%img arrows r^2
-
 Cas particulier (Exercice)
 $(X,Y)$ une couple de v.a. de loi  cougointe-
-$$f_{XY}=\frac1{4\pi}e^{-\frac u2}\ind_{u\geq 0}(u)\ind_{[0,2\pi]}(v)\dd{u}\dd{v}$$
-Question: Trouver la loi du couple:
+$$f_{XY}=\frac1{4\pi}e^{-\frac u2}\ind_{u\geq 0}(u)\ind_{[0,2\pi]}(v)\dd{u}\dd{v}$$\emph{
+Question}. Trouvons la loi du couple:
 $$(\sqrt{X}\cos Y, \sqrt X\sin Y)=(U,V)$$
-Sait $h:\R^2\rightarrow \R$ une fonction test non-négative.
-
-$\E(h\circ g(X,Y))=\int_\Omega h\circ g(X,Y)\dd{\pro}=\iint\limits_{\R^2}h(g_1(x,y), g_2(x,y))f_{XY}(x,y)\dd{x} \dd{y}\overset{?}{=}\iint\limits_{\R^2}h(u,v)f_{UV}(u,v)\dd{u} \dd{v}$
+Soit $h:\R^2\rightarrow \R$ une fonction \texttt{test} non-négative.
+$\E(h\circ g(X,Y))=\int_\Omega h\circ g(X,Y)\dd{\pro}=\iint\limits_{\R^2}h(g_1(x,y), g_2(x,y))f_{XY}(x,y)\dd{x} \dd{y}\overset{?}{=}$ $\iint\limits_{\R^2}h(u,v)f_{UV}(u,v)\dd{u} \dd{v}$
 
 $$\left\{\begin{array}{ccc}u=\sqrt x \cos y\\ v=\sqrt x \sin y\end{array}\right.$$
 
@@ -479,15 +475,14 @@ $$g: \left\{ \begin{array}{ccc}u&=&g_1(x,y)\\v&=&g_2(x,y)\end{array} \right.$$
 $g=(g_1,g_2)$. Pour pouvoir effectuer un changement de variable, il faut que $g$ soit un \underline{difféomorphisme} entre 2 ouverts.
 % img omega 
 
-$g:\mathcal O_1\rightarrow \mathcal O_2$ difféomorphisme cute deux ouverts. Condition équivalents pour avoir un difféomorphisme:
-\begin{enumerate}
+$g:\mathcal O_1\rightarrow \mathcal O_2$ difféomorphisme entre deux ouverts. Condition équivalents pour avoir un difféomorphisme:
+\begin{enumerate}[(i)]
 	\item $g$ est injective sur $\mathcal O_1$ à valeurs dans $\mathcal O_2$.
-	\item $g$ est de classe $b^{(1)}(\mathcal O_1)$, c'est-à dire les deciver- peut eller- de $g$ existe tout caitunes-.
-	\item Le déterminant de $(g\dmo)'\neq 0$ sur$\mathcal O_2$
+	\item $g$ est de classe $b^{(1)}(\mathcal O_1)$, c'est-à dire les dérivés partielles de $g$ existe et sont continuous.
+	\item Le déterminant de $\det(g\dmo)'\neq 0$ sur $\mathcal O_2$
 \end{enumerate}
 
-Nous son défini
-
+Nous avons défini
 $$g: \left\{ \begin{array}{ccc}u&=&g_1(x,y)\\v&=&g_2(x,y)\end{array} \right.\overset{\mbox{il faut inverser}}{\rightarrow}$$
 $$g\dmo: \left\{ \begin{array}{ccc}x&=&\Phi_1(u,v)\\y&=&\Phi_2(u,v)\end{array} \right.$$
 $\Phi=(\Phi_1,\Phi_2)$
@@ -500,12 +495,17 @@ $$|\det J_\Phi (u,v)|$$
 $$=\iint\limits_{g(O_1)=O_2}h(u,v)f_{XY}(\Phi_1(u,v),\Phi_2(u,v))|\det J_\Phi (u,v)|\dd{u}\dd{v}$$
 
 Trouve le nouvelle domaine d'intégration.
+$\iint\limits_{O_1}h(g_1(x,y), g_2(x,y))f_{XY}(x,y)\dd{x} \dd{y}=\iint\limits_{g(O_1)=O_2}h(u,v)f_{XY}(\Phi_1(u,v),\Phi_2(u,v))|\det J_\Phi (u,v)|\dd{u}\dd{v}$
 
 La densité de $(U,V)$ est donc:
-$$f_{UV}(u,v)=f_{XY}(\Phi_1(u,v),\Phi_2(u,v))\cdot |\det J_\Phi(u,v)|\cdot \ind_{g(\mathcal O_1)}(u,v)$$
 
+\begin{empheq}[box=\mymath]{equation*}
+	f_{UV}(u,v)=f_{XY}(\Phi_1(u,v),\Phi_2(u,v))\cdot |\det J_\Phi(u,v)|\cdot \ind_{g(\mathcal O_1)}(u,v)
+\end{empheq}
 
-Continue with exercice:
+Continuer avec l'exercice.:
+
+{\small
 
 $\iint_{0\ 0}^{\infty\ 2\pi} h(\sqrt x \cos y,\sqrt x \sin y)\frac 1{4\pi}e^{-\frac x2}\dd{x}\dd{y}=$
 
@@ -539,15 +539,19 @@ Densité de $(X+Y,Y)$ est $\frac{1}{2\pi}e^{-\frac{u^2-2uv+2v^2}{2}}$.
 Densité de $(X+Y)$:
 $$f_U(u)=\int_{-\infty}^\infty f_{UV}(u,v)\dd v=\frac 1{2\pi}\int_{-\infty}^\infty e^{-\frac 12(u^2-2uv+2v^2)}\dd v$$
 ---produit de convolution.
+}
 
-Si $X$ et $Y$ sont indépendant de loi marginal $f_X$ et $f_Y$ alors la v.a. X+Y est à densité est $f_{X+Y}(u)=\int_\R f_Y(u)\cdot f_X(u-v)\dd v\overset{\mbox{\tiny def}}{=}f_Y\ast f_X$---produit de convolution.
+\begin{theorem}
+	Si $X$ et $Y$ sont indépendant de loi marginal $f_X$ et $f_Y$ alors la v.a. $X+Y$ est à densité est $f_{X+Y}(u)=\int_\R f_Y(u)\cdot f_X(u-v)\dd v\overset{\mbox{\tiny def}}{=}f_Y\ast f_X$---produit de convolution.
+\end{theorem}
 
+
+
+Soit (U,V) un couple de variables aléatoires de densité conjointe:
+$$f_{UV}(u,v)=\left\{\begin{array}{l}γ(2u^2v+1), (v,v)\in D\\ 0 \text{, ailleurs}\end{array}\right.$$
+où $D=\{(u,v)\in \R^2\ |\ |u|<1, |u-1|<1\}$.
 
 \begin{exercise}
-	Soit (U,V) un couple de variables aléatoires de densité conjointe:
-	$$f_{UV}(u,v)=\left\{\begin{array}{l}γ(2u^2v+1), (v,v)\in D\\ 0 \text{, ailleurs}\end{array}\right.$$
-	où $D=\{(u,v)\in \R^2\ |\ |u|<1, |u-1|<1\}$.
-
 	\textbf{Questions.}
 	\begin{enumerate}
 		\item déterminer la valeur de $γ$
@@ -569,7 +573,7 @@ Si $X$ et $Y$ sont indépendant de loi marginal $f_X$ et $f_Y$ alors la v.a. X+Y
 \end{exercise}
 
 \begin{definition}
-	Si $X$ et $Y$ sont $2$ v.a. ou définit la \textsc{Covariance} entre $X$ et $Y$ comme
+	Si $X$ et $Y$ sont $2$ v.a. on définit la \textsc{Covariance} entre $X$ et $Y$ comme
 	$\cov(X,Y)\overset{\text{def}}{=}\E\left[(X-\E(X))(Y-\E(Y))\right]=\E(XY)-\E(X)\E(Y)$.
 \end{definition}
 
@@ -595,7 +599,7 @@ Si $X$ et $Y$ sont indépendant de loi marginal $f_X$ et $f_Y$ alors la v.a. X+Y
 
 
 \section{Fonction génératrice} % (fold)
-\label{sec:donction_génératrice}
+\label{sec:donction_generatrice}
 $X$ set une v.a. discrète a valeurs dans $\N\cup\{0\}$ 
 
 Ex
@@ -615,52 +619,54 @@ $$g_x(s)=∑_{i=0}^{+∞} p_is^i $$
 (série entière, "power" séries), où la loi de $X$ est $P_X=∑_{i=0}^∞p_iδ_{\{i\}}$.	
 \end{definition}
 
-
 \begin{proposition}
-	Si on connait $g_X(s)$ on connaît la loi, c-a-d les $\{p_i\}_{i=0}^∞$.
+	Si on connait $g_X(s)$ on connaît la loi, c-a-d les $\{p_i\}_{i=0}^∞$. D'abord la série converge pour $s\in[-1,1]$ et uniformément pour $s\in ]-1,1[$.
 \end{proposition}
 
 \begin{proof}
-	D'abord la série converge pour $s\in[-1,1]$ et uniformément pour $s\in (-1,1)$. La série peut être dérivée terme-à-terme pour $s\in (-1,1)$. $g'_X(s)=∑^∞_{i=1}p_iis^{t-1}\ g''_X(s)=∑^∞_{i=2}p_ii(i-1)s^{t-1}\ g^{(k)}_X(s)=∑^∞_{i=k}p_ii(i-1)...(i-k+1)s^{i-k}$
+	La série peut être dérivée terme-à-terme pour $s\in (-1,1)$. 
+	\begin{align*}
+		g'_X(s)=∑^∞_{i=1}p_iis^{t-1}\\ 
+		g''_X(s)=∑^∞_{i=2}p_ii(i-1)s^{t-1}\\
+		\cdots
+		g^{(k)}_X(s)=∑^∞_{i=k}p_ii(i-1)...(i-k+1)s^{i-k}\\	
+	\end{align*}
 	On calcul $g^{(k)}(0)$.
 	$$p_k=\frac{g^{(k)}(0)}{k!}$$
 \end{proof}
 
-	
-	Attention. $g_X(s)-∑^∞){i-0}p_is^i$
-	
-	On dérive $g'_X(s)=∑^∞_{i=1}p_iis^{i-1}$
-	Supposons qu'on puisse étendre la denrée dans $s=1$
-	$g'_X(1)=∑^∞p_ii=\E(X)$
-	Application. 
-	
-	$X$ v.a. $B(N,p)$
+\textbf{Attention.} $g_X(s)-∑^∞_{i=0}p_is^i$.
+On dérive $g'_X(s)=∑^∞_{i=1}p_iis^{i-1}$.
+Supposons qu'on puisse étendre la dérivée dans $s=1$
+$g'_X(1)=∑^∞p_ii=\E(X)$
+
+\textbf{Application.} 
+
+\begin{itemize}
+	\item $X\sim B(N,p)$ v.a.\\
 	$\E(x)=∑^N_{k=0}kC_N^kp^k(1-p)^{N-k}=?Np$
 	On utilise la fonction génératrice:
-	$g_X(s)==∑^N_{k=0}C_N^kp^k(1-p)^{N-k}s^k= ∑C_n^k(ps)^k(1-p)^{N-k}=[ps+(1-p)]^N$
-	
+	$g_X(s)=∑^N_{k=0}C_N^kp^k(1-p)^{N-k}s^k= ∑C_n^k(ps)^k(1-p)^{N-k}=[ps+(1-p)]^N$
 	$g'_X(s)|_{s=1}=N[p+(1-p)]^{N-1}•p|_{s=1}=Np$
-	
-	X v.a. Poisson
+	\item $X$ v.a. Poisson
 	$\E(P)=λ$
 	$\E(P)=∑_{k=0}^∞ k\frac{λ^ke^{-λ}}{k!}$
 	$g_P=∑_{k=0}^∞...=e^-λ e^λs $
+\end{itemize}
 
 \begin{lemme}(Abel)
 	\begin{enumerate}
-		\item Si la série $∑^∞_{i=0}α_i=α$ alors $lim_{s\to 1^-}∑_{i=0}^∞ α_is^i=α$
+		\item Si la série $∑^∞_{i=0}α_i=α$ alors $\lim_{s\to 1^-}∑_{i=0}^∞ α_is^i=α$
 		\item Si les $α_i$ sont positifs et si $\lim_{s\to 1^-}∑_{i=0}^∞ α_is^i=α<+∞$, alors $∑_{i=0}^∞α_i=α.$
 	\end{enumerate}
 \end{lemme}
-
 \begin{proof}
 $g_X(s)=∑_{i=0}^∞p_is^i$
 (1) Supposons que $\E(X)<+∞$ $\Leftrightarrow$ $∑_{i=0}^∞ ip_i=\E(X)$
 donc on est dans la partie 1 du Lemme
 Donc 
-$$\lim_s\to1^-∑_{i=0}^∞ip_i s^i=\E(X)=lim s\to 1^- g;_x(s)$$	
+$$\lim_{s\to1^-}\underbrace{∑_{i=0}^∞ip_i s^i}_{g'_X(s)}=\E(X)$$	
 \end{proof}
-
 
 \begin{proposition}
 	On a $\E(X(X-1)...(X-r+1))=\lim_{s\to 1^-}g_X^{(r)}(s):=g_X^{(r)}(1)$.
@@ -670,23 +676,16 @@ $$\lim_s\to1^-∑_{i=0}^∞ip_i s^i=\E(X)=lim s\to 1^- g;_x(s)$$
 \subsection{Fonction génératrice des moments} % (fold)
 \label{sub:subsection_name}
 
-\ifcomment
-% subsection subsection_name (end)
+$Χ$ une v.a. quelconque $u\in \R$; $G_X(u)=\E(e^{uX}) =\int_Ωe^{uX}\dd{\pro}=\int_\R e^{uX}\dd{P_X{x}}$
 
-Χ une v.a. quelconque $u\in \R G_X(u)=\E(e^{uX}) =\int_Ωe^{uX}\dd{\pro}=\int_\R e^{uX}\dd{}$
-% section donction_génératrice (end)
-
-\fi
-
-\subsection{Fonction génératrice des moments}
-Fonction génératrice pour de v.a. à valeurs dans $\N\cup\{0\}$. Si $X$ est une telle v.q. sa loi $P_X=∑_iδ_{\{i\}}$ avec fonction génératrice
-$$P_X(s)=∑_{i=0}^{+∞}p_is^i,$$ $|s|≤1$ avec convergence uniforme pour $|s|<1$.
+Fonction génératrice pour de v.a. à valeurs dans $\N\cup\{0\}$. Si $X$ est une telle v.q. sa loi $P_X=∑_ip_iδ_{\{i\}}$ avec fonction génératrice
+$$G_X(s)=∑_{i=0}^{+∞}p_is^i,$$ $|s|≤1$ avec convergence uniforme pour $|s|<1$.
 
 \begin{exercise}
 	Soit $X$ et $Y$ deux v.a. à valeurs dans $\N\cup\{0\}$ et indépendantes. Calculer la fonction génératrice de la v.a. $Z=X+Y$.
 \end{exercise}
 \begin{definition}
-	Si $X$ est une v.a. quelconque, on définit, pour $v\in\R g_X(u)=\E(e^{uX})$ la fonction génératrice des moments.
+	Si $X$ est une v.a. quelconque, on définit, pour $v\in\R$ $g_X(u)=\E(e^{uX})$ la fonction génératrice des moments.
 \end{definition}
 \begin{remark}
 	Si $X$ est à valeurs dans $\N\cup\{0\}$ et si on pose $e^u=s$, on retrouve la fonction génératrice.
@@ -698,25 +697,39 @@ Propriétés de $g_X(u)=\E(e^{uX})$
 	\item Si $X$ est borne alors $g_X$ est bien défini et continue pour $u\in\R$ (borne est limite)
 		$$g_X(u)=\int_Ω e^{uX(ω)}\dd{\pro(ω)}$$
 		$\lim_{u\to u_0}g_X(u)=\lim_{u\to u_0}∫_Ωe^{uX(ω)}\dd{\pro(ω)}$
-		$\lim_{ρ\to \bar ρ}∫f(x,ρ)\dd{μ(x)}=$ Si (i) $\lim_{ρ\to \bar ρ}f(x,ρ)$ existe (ii) $|f(x,ρ)|≤h(x)$ $h≥ 0$ indépendante de $ρ$ et $∫h(x)<∞$ alors $= ∫\lim_{ρ\to \bar ρ}f(x,ρ)dμ(x)$
+		\begin{rappel}
+			$\lim_{ρ\to \bar ρ}∫f(x,ρ)\dd{μ(x)}\oeq$\\
+			Si:\\
+			(i) $\lim_{ρ\to \bar ρ}f(x,ρ)$ existe\\
+			(ii) $|f(x,ρ)|≤h(x)$ $h≥ 0$ indépendante de $ρ$ et $∫h(x)<∞$\\
+			alors $\oeq∫\lim_{ρ\to \bar ρ}f(x,ρ)\dd{μ(x)}$.
+		\end{rappel}
+
 		
-		(iii) Si $a,b\in\R$ ,$g(u) = e^{ub}g_X(au)$
-		(iv) $g_X(-u)$ est la fonction génératrice des moments de la v.a. $Y=-X$
-		(v) $g_X$ est convexe.
-		(vi) Si $X$ et $Y$ sont indépendantes et chacune admet une fonction génératrice, alors
+	\item Si $a,b\in\R$ ,$g_{aX+b}(u) = e^{ub}g_X(au)$
+	\item $g_X(-u)$ est la fonction génératrice des moments de la v.a. $Y=-X$
+	\item $g_X$ est convexe.
+	\item Si $X$ et $Y$ sont indépendantes et chacune admet une fonction génératrice, alors
 		$g_{X+Y}(u)=g_X(u)g_Y(u)$
 \end{enumerate}
 
-Soit $Y=N(0,1)$ montrez que $X=e^Y$ a une fonction génératrice des moments qui ne pas définie pur $u>0$.
-\begin{remark}
-	(important) La fonction génératrice des moments es \texttt{importante et utile} si elle existe pour $u$ dans un voisinage.
+\begin{exercise}
+	Soit $Y=N(0,1)$ montrons que $X=e^Y$ a une fonction génératrice des moments qui ne pas définie pour $u>0$.
+\end{exercise}
+
+\begin{remark}[important]
+	La fonction génératrice des moments est \texttt{importante et utile} si elle existe pour $u$ dans un voisinage de 0.
 \end{remark}
+
 \begin{theorem}
 	Soit $X$ une v.a. et $g_X(u)$ sa fonction génératrice des moments en définie pour $-u_0<u<+u_0$ (intervalle ouvert), alors:
-	(i) $\E(|X|^k)<∞$, $\forall k≥0$
-	(ii) $\forall -u_0<u<u_0 g(u)=1+\E(X)u+\frac{u^2}{2!}\E(X^2)+...+\frac{u^n}{n!}+...$ (série convergente)
-	(iii) $\forall k≥1 g_X^{(k)}(u=0)=\E(X^k)$ --- moment d'ordre $k$ de $X$.
+	\begin{enumerate}
+		\item $\E(|X|^k)<∞$, $\forall k≥0$
+		\item $\forall u\in]-u_0,u_0[$: $$g(u)=1+\E(X)u+\frac{u^2}{2!}\E(X^2)+...+\frac{u^n}{n!}\E(X^n)+...$$ (série convergente)
+		\item $\forall k≥1 g_X^{(k)}(u=0)=\E(X^k)$---moment d'ordre $k$ de $X$.
+	\end{enumerate}
 \end{theorem}
+
 \begin{exercise}
 	$X=N(0,1)$ $f_X(x)=\frac 1{\sqrt{2π}}e^{-\frac{x^2}2}$. $\E(X)=0$ $\V(X)=1=\frac 1{\sqrt{2π}}∫_{-∞}^{∞}x^2e^{-\frac{x^2}2}\dd{x}$.
 	$g_X(u)=\E(e^{uX})=\frac 1{\sqrt{2π}}∫_{-∞}^{∞}e^{ux}e^{-\frac{x^2}2}\dd{x}=\frac 1{\sqrt{2π}}e^{\frac 12 u^2}∫_{-∞}^∞e^{-\frac 12 y^2}\dd{y}=e^{\frac 12 u^2}$.
@@ -733,8 +746,8 @@ Soit $Y=N(0,1)$ montrez que $X=e^Y$ a une fonction génératrice des moments qui
 	$u<0$
 \end{exercise}
 \begin{proof}
-	Le preuve sera faite pour des v.a. à densité. Donc: $\E(|X^k|)=∫_\R|x^k|f_X(x)\dd{x}$ On sait que: $e^{s|x|}=∑_{k=0}^{∞}\frac{s^k|x|^k}{k!}$ ($\Rightarrow$ $|x|^k≤\frac{e^{s|x|}k!}{s^k})$. On sait par hypothèse que $\E(e^{uX})=∫_{-∞}^∞e^{ux}f_X(x)\dd{x}<∞$ $-u_0<u<u_0$ 
-	$≤\frac{k!}{s^k}[∫_{-∞}^0e^{-sx}f_X(x)\dd{x}+∫_0^∞e^{sx}f_X(x)\dd{x}]$
+	Le preuve sera faite pour des v.a. à densité. On appelle $f_X(x)$ la densité. Donc: $\E(|X^k|)=∫_\R|x^k|f_X(x)\dd{x}$ On sait que: $e^{s|x|}=∑_{k=0}^{∞}\frac{s^k|x|^k}{k!}$ ($\Rightarrow$ $|x|^k≤\frac{e^{s|x|}k!}{s^k})$. On sait par hypothèse que $\E(e^{uX})=∫_{-∞}^∞e^{ux}f_X(x)\dd{x}<∞$ pour tout $u$: $-u_0<u<u_0$. 
+	$\E(|X^k|)=∫_\R|x^k|f_X(x)\dd{x}≤\frac{k!}{s^k}∫_\R e^{-s|x|}f_X(x)\dd{x}$
 	Si on choisit $-u_0<s<u_0$ l'intégrale $∫_{-∞}^{∞}\underbrace{e^{sx}f_X(x)}_{g_X(s)}\dd{x}<∞$ car et de la même manière $∫_{-∞}^∞e^{sx}f_X(x)\dd{x}=g_{-x}(s)<+∞$
 	$≤\frac{k!}{s^k}[∫_{-∞}^∞e^{-sx}f_X(x)\dd{x}+∫_{-∞}^∞e^{sx}f_X(x)\dd{x}]$ (voir une des proposition affichée)
 	
@@ -748,7 +761,7 @@ Soit $Y=N(0,1)$ montrez que $X=e^Y$ a une fonction génératrice des moments qui
 	(1)cette limite doit exister mais ça c'est vrai: $f_X(x)e^{ux}$.
 	(2)$|∑_{k=0}^n\frac{(ux)^k}{k!}f_X(x)|≤f_X(x)∑_{k=0}{n}\frac{|u|^k|x|^k}{k!}≤f_X(x)∑_{k=0}{∞}\frac{u_0^k|x|^k}{k!}≤f_X(x)e^{u_0'(x)}$
 	
-	lNous reste à montrer que $∫_\R e^{u_0'|x|}f_X(x)<∞$.
+	Nous reste à montrer que $∫_\R e^{u_0'|x|}f_X(x)<∞$.
 \end{proof}
 
 \begin{itemize}
@@ -759,12 +772,12 @@ Soit $Y=N(0,1)$ montrez que $X=e^Y$ a une fonction génératrice des moments qui
 \end{itemize}
 
 \begin{definition}
-	Soit X une v.a. (vectorielle); on pose:
+	Soit $X$ une v.a. (vectorielle); on pose:
 	$$φ_X(t)=\E(e^{itX}),\ i=\sqrt{-1}$$
-	On appelle $φ_X(t)$ la fonction caractéristique de $X$.
+	On appelle $φ_X(t)$ \textsc{la Fonction Caractéristique} de $X$.
 \end{definition}
 \begin{remark}
-	Si $X$ est vectorielle $tX=∑_{i=1}^{d}$, $t=(t_1,...,t_d)$. Pour un moment on considère $X:Ω\rightarrow \R$ (salaire, pas vectorielle).
+	Si $X$ est vectorielle $tX=∑_{i=1}^{d}t_ix_i$, $t=(t_1,...,t_d)$. Pour un moment on considère $X:Ω\rightarrow \R$ (salaire, pas vectorielle).
 \end{remark}
 \begin{remark}
 	Si $X:Ω\rightarrow \R$ a densité $f_X(x)$ alors $φ_X(t)=∫_\R e^{itx}f_X(x)\dd{x}$ transformée de Fourrier de $f_X$. 
@@ -773,10 +786,11 @@ Soit $Y=N(0,1)$ montrez que $X=e^Y$ a une fonction génératrice des moments qui
 	En général si $X$ a loi $P_X$, on a $φ_X(t)=∫_\R e^{itx}\dd{P_X(x)}$. On avait dit que la loi $P_X$ est la mesure de Lebegue-Stilties engendres par la fonction de répartition $F_X$ de $X$. $P_X((a,b])=F_X(b)-F(a)$.
 \end{remark}
 \begin{proposition}
+	\leavevmode
 	\begin{enumerate}
-		\item $φ_X(t)$ est définie et continue pour $t\in\R $est aussi borne.
+		\item $φ_X(t)$ est définie et continue pour $t\in\R$ est aussi bornée.
 		\item $φ_{aX+b}(t)=e^{ibt}φ_X(at)$
-		\item (Importante!!!) Soit $X_1,X_2, ..., X_n$ une suite de v.a. toutes définies sur la même espace $(Ω,\mathcal{A},\pro)$ et indépendantes.
+		\item (Importante!) Soit $X_1,X_2, ..., X_n$ une suite de v.a. toutes définies sur la même espace $(Ω,\mathcal{A},\pro)$ et indépendantes.
 	\end{enumerate}
 \end{proposition}
 
@@ -796,10 +810,7 @@ $φ_{S_n}(t)=\E(e^{itS_n})=\E(e^{it(X_1+...+X_n)})=\E(e^{itX_1}...e^{itX_n})=\pr
 	$φ(t)=e^{\frac 1{\sqrt{2π}}\frac{t^2}2}$
 \end{example}
 
-Liste 
-
 $(a+b)^N=∑_{k=0}^{N}C_n^ka^kb^{N-k}$
-1
 \begin{enumerate}
 	\item binomiale $B(N,p)$ $q=1-p$
 	$φ_X(t)=(q+pe^{it})^N$
@@ -827,7 +838,7 @@ Critère de Cauchy, $∑_{n=0}^∞a_nX^n$ le rayon de convergence $R$ est donne 
 \end{rappel}
 \begin{proof}
 	(ii) on sait que pour un certain n
-	$\E(|X|^n)<∞$, alors$ \forall r≤n$, $\E(|X|^2)<∞$ car $L^n(\pro)\subset L^r(\pro)$ si $\pro$ est une mesure de proba. On va montrer la formule pour $r=1$, pour $r1$ la preuve est singulière. On applique la définition de dérivée.
+	$\E(|X|^n)<∞$, alors $\forall r≤n$, $\E(|X|^2)<∞$ car $L^n(\pro)\subset L^r(\pro)$ si $\pro$ est une mesure de probababilité. On va montrer la formule pour $r=1$, pour $r1$ la preuve est singulière. On applique la définition de dérivée.
 	$\frac{φ(t+h)-φ(t)}h=∫_\R\frac{e^{i(t-h)-e^{it}}{h}}\dd{F(x)}=∫_\R\frac{e^{itx}(e^{ihx}-1)}{h}\dd{F(x)}$.
 	Considérons cette partie $\frac{e^{ihx}-1}h=\frac{1+ihx+O(|x|^2)-1}{h}$. On développe $e^{ixh}$ en $X$ autour de $0$: $e^{ihx}=1+ihx+O(|x|^2)$
 	$\frac{|e^{ihx}-1|}h=\frac{|e^{ihx}-e^{ih0}|}h=\frac{|e^{ih\eta}hx|}h=|x|$
@@ -844,11 +855,11 @@ Critère de Cauchy, $∑_{n=0}^∞a_nX^n$ le rayon de convergence $R$ est donne 
 	
 \end{proof}
 \begin{theorem}
-	Soit F et G deux fonctions de répartition (on deux lois) avec la même fonction caractéristique
+	Soit $F$ et $G$ deux fonctions de répartition (on deux lois) avec la même fonction caractéristique
 	$$∫e^{itx}\dd{F(x)}=∫e^{itx}\dd{G(x)}, \forall t\in \R$$
 	alors $F=G$.
 \end{theorem}
-On a besoin d'une résultat technique. Toute fonction réelle continue sur l'intervalle $[-n,n]$ avec les mêmes valeurs sur les bords, peut être uniformément approximee par des polynômes trigonométriques.
+On a besoin d'une résultat technique. Toute fonction réelle continue sur l'intervalle $[-n,n]$ avec les mêmes valeurs sur les bords, peut être uniformément approximée par des polynômes trigonométriques.
 
 $f_{ε,η}(x)=∑_{k=1}^{N<∞}a_k\exp(iπx\frac kη),\ a_k\in\R$
 
@@ -1018,3 +1029,44 @@ Pourquoi? Supposons que $f_X(x)=0$. donc $f_{XY}(x,y)=0\ \forall$ presque toute 
 \begin{proof}
 	$∫(\E(g(X,Y)|X=x))f_X(x)\dd{x}=∫(∫g(x,y)f_{Y|X})\dd{y})f_X(x)\dd{x}=∫\dd{y}(∫g(x,y)f_{XY}(x,y)\dd{x})=\E(g(X,Y))$. Hyp $∫∫|g(x,y)|f_{X,Y}(x,y)<∞$.
 \end{proof}
+
+\section{Convergence de variables aléatoires} % (fold)
+\label{sec:convergence_de_variables_aleatoires}
+Idée On a une suite de v.a. $\{X_n\}_{n≥1}$ définie sur $(Ω,\mathcal{A}, \pro)$. Est-ce que $X_n$ \emph{converge} pour $n\to+∞$?
+Il y a plusieurs façon de converger. 
+
+\subsection{Convergence en probabilité} % (fold)
+\label{sub:convergence_en_probabilite}
+On dira que la suite $X_n$ Converge en Probabilité vers la v.a. $X$ aussi définie sur $(Ω,\mathcal{A})$ et on écrit $X_n\toP X$, si $\forall ε>0$ $$\pro(|X_n-X|>ε)\to 0\ n\to∞$$.
+\begin{remark}
+	$\pro(ω\in Ω:\ |X_n(ω)-Χ(ω)|>ε)$
+\end{remark}
+% subsection convergence_en_probabilite (end)
+\subsection{Convergence en norme $L^p$} % (fold)
+\label{sub:convergence_en_norme_l_p}
+\begin{definition}
+	On dira que $X_n$ converge en norme $L^p$ vers $X$ et on écrira $X_n\to^{L^p}X$ si
+	$$\norm{X-X_n}_p\to 0,\ n\to∞.$$
+\end{definition}
+\begin{remark}
+	$\norm{X}_p=(∫|x|^p\dd{\pro})^{\frac 1p}$.
+\end{remark}
+\begin{proposition}
+	Si $X_n$ converge en norme $L^p$ vers $X$ pour un certain $p$ alors $X_n$ converge en probabilité vers $X$.
+\end{proposition}
+\begin{proof}
+	Est base sur l'inégalité de Chebyshev.
+	$\pro(X>ε)≤\frac 1ε\E(X)$
+	$\E(X)=∫_ΩΧ\pro=∫_{\{X>ε\}}X\dd{\pro}+∫_{\{X≤ε\}}X\dd{\pro}≥ε\pro(X>ε)$
+	On a:
+	$\norm{X_n-X}_p\to 0$
+	$\pro(|X_n-X|^p>ε^p)≤\frac 1{ε^p}∫|X_n-X|^p\dd{\pro}=\frac 1{ε^p}\norm{X_n-X}_p^p\to 0$.
+\end{proof}
+% subsection convergence_en_norme_l_p (end)
+\paragraph{Convergence presque partout} % (fold)
+\label{par:convergence_presque_partout}
+On dira que la suite $\{X_n\}_{n≥1}$ converge Presque Partout vers $X$ et on écrira:
+$X_n\toPP X$ s'il existe un ensemble $N\in\mathcal{A}$, $\pro$---négligeable ($\pro(N)=0$) tel que, $\forall ω\in N^C$ on a $\lim_{n\to ∞}X_n(ω)=X(ω)$.
+% paragraph convergence_presque_partout (end)
+% section convergence_de_variables_aleatoires (end)
+
