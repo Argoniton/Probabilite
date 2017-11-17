@@ -1037,7 +1037,10 @@ Il y a plusieurs façon de converger.
 
 \subsection{Convergence en probabilité} % (fold)
 \label{sub:convergence_en_probabilite}
-On dira que la suite $X_n$ Converge en Probabilité vers la v.a. $X$ aussi définie sur $(Ω,\mathcal{A})$ et on écrit $X_n\toP X$, si $\forall ε>0$ $$\pro(|X_n-X|>ε)\to 0\ n\to∞$$.
+\begin{definition}
+	On dira que la suite $X_n$ \textsc{Converge en Probabilité} vers la v.a. $X$ aussi définie sur $(Ω,\mathcal{A})$ et on écrit $X_n\toP X$, si $\forall ε>0$ $$\pro(|X_n-X|>ε)\to 0\ n\to∞.$$
+\end{definition}
+
 \begin{remark}
 	$\pro(ω\in Ω:\ |X_n(ω)-Χ(ω)|>ε)$
 \end{remark}
@@ -1045,7 +1048,7 @@ On dira que la suite $X_n$ Converge en Probabilité vers la v.a. $X$ aussi défi
 \subsection{Convergence en norme $L^p$} % (fold)
 \label{sub:convergence_en_norme_l_p}
 \begin{definition}
-	On dira que $X_n$ converge en norme $L^p$ vers $X$ et on écrira $X_n\to^{L^p}X$ si
+	On dira que $X_n$ \textsc{Converge en Norme} $L^p$ vers $X$ et on écrira $X_n\to^{L^p}X$ si
 	$$\norm{X-X_n}_p\to 0,\ n\to∞.$$
 \end{definition}
 \begin{remark}
@@ -1063,10 +1066,103 @@ On dira que la suite $X_n$ Converge en Probabilité vers la v.a. $X$ aussi défi
 	$\pro(|X_n-X|^p>ε^p)≤\frac 1{ε^p}∫|X_n-X|^p\dd{\pro}=\frac 1{ε^p}\norm{X_n-X}_p^p\to 0$.
 \end{proof}
 % subsection convergence_en_norme_l_p (end)
-\paragraph{Convergence presque partout} % (fold)
+\subsection{Convergence presque partout} % (fold)
 \label{par:convergence_presque_partout}
-On dira que la suite $\{X_n\}_{n≥1}$ converge Presque Partout vers $X$ et on écrira:
-$X_n\toPP X$ s'il existe un ensemble $N\in\mathcal{A}$, $\pro$---négligeable ($\pro(N)=0$) tel que, $\forall ω\in N^C$ on a $\lim_{n\to ∞}X_n(ω)=X(ω)$.
-% paragraph convergence_presque_partout (end)
+\begin{definition}
+	On dira que la suite $\{X_n\}_{n≥1}$ converge \textsc{Presque Partout} vers $X$ et on écrira:
+	$X_n\toPP X$ s'il existe un ensemble $N\in\mathcal{A}$, $N$---négligeable ($\pro(N)=0$) tel que, $\forall ω\in N\diagdown C$ on a $\lim_{n\to ∞}X_n(ω)=X(ω)$.
+\end{definition}
+\begin{theorem}
+	Si $X_n\toPP X$, $\forallε>0\ \exists\tilde Ω_ε$ mesurable et tel que $\pro(Ω|\tilde Ω_ε)<ε$ et $\forall ω\inΩ_ε $
+	$\lim_{n\to ∞}X_n(ω)=X(ω)$ uniformément.
+\end{theorem}
+% subsection convergence_presque_partout (end)
+\subsection{subsection name} % (fold)
+\label{sub:subsection_name}
+\begin{remark}
+	Pour signifier des notations on supposera que la v.a. limite $X=0$.
+\end{remark}
+Introduisons la quantité, $\forall ε>0$, $E_n(ε)=\{|X_n|>ε\}=\{ω\in Ω, |X_n(ω)|>ε\}$, $E_n(ε)=\{|X_n-X|>ε\}$. $E_n(ε)=\{|X_n|>ε\}$.
+\begin{definition}[$\lim\sup$ d'une suite d'ensembles]
+	$\lim\sup_{n\to∞}E_n(ε)\def \cap_{n≥1}\cup_{k≥n}E_k(ε)$
+\end{definition}	
+Si $X\in\lim\sup_{n\to∞}E_n(ε)$ <=> $x\in\cup E_k(ε)$, $\forall n$ <=> $x\in E_j j≥n$ | $x\in$ une infinité d'ensembles $E_n$.
+
+A l'aide du $\lim\sup_{n\to∞}E_n(ε)$ nous allons caractériser l'ensemble de divergence $D$ de la suite $\{N_n\}_{n≥1}$ vers. $0$, c-a-d. la suite où $X_n$ ne converge pas vers $X=0$.
+
+$D=\cup_{ε>0}\cap_{n≥1}\cup_{k≥n}E_k(ε)$. Si $ω\in D\subsetΩ$ la suite $X_n(ω)\not\to 0$. Si $ω\in D$ <=> $ω\in\cap_{n≥1}\cup_{k≥n}E_n(ε)$ pour un $ε>0$.
+
+\begin{remark}
+	L'ensemble des points ($ω$) de convergence $C$ ver $X=0$, et donc le complémentaire de $D$.
+	$$C=D^C=\cap_{ε>0}\cup_{n≥1}\cap_{k≥n}\{|X_n|≤ε\}.$$
+\end{remark}
+Il faut montrer que $D$ est mesurable (c-s-d il est dans la $σ$-algèbre). Grace à la monotonie (dans le sens de l'inclusion) des ensembles $E(ε)$, on a:
+$$D=\cup_{l=1}^{∞}E(\frac 1l).$$
+Donc $D$ est mesurable.
+
+\begin{definition}[équivalente de convergence PP]
+	On dira que la suite $\{X_n\}_{n≥1}$ converge ver $X=0$ \textsc{Presque Partout} si $\forallε>0\ \pro(E(ε))=0$.
+\end{definition}
+Cette définition s'appuie sur ce résultat.
+
+\begin{proposition}
+	On a équivalence entre
+	\begin{enumerate}[(i)]
+		\item $\pro(D)=0$ et
+		\item $\forall ε>0 \pro(E(ε))=0$.
+	\end{enumerate}
+\end{proposition}
+\begin{proof}
+	(i) => (ii) et après (ii) => (i).
+	
+	$0=\pro(D)=\pro(\cup_{l=1}^∞E(\frac 1l))=\pro(E(\frac 1l))$ => $D\supset E(\frac 1l), \forall l≥1$ => $\pro(E(\frac 1l))=0 \forall l$.
+	
+	$\forall ε>0\ \pro(E(s))=0$ Hypothèse $\pro(D)=\pro(\cup_{l=1}^∞E(\frac 1l))≤∑_{l=1}^∞\pro(E(\frac 1l))=0$.
+\end{proof}
+
+$E(ε)=\lim\sup_{n\to∞}E_n(ε)=\cup_{n≥1}\cap_{k≥n}E_k(ε)$.
+
+\begin{lemme}[Borel-Cantelle]
+	Soit $\{A_n\}_{n≥1}$ une suite qq d'événements.
+	$\lim\sup_{n\to∞}\cap_{n>1}\cup_{k≥n}A_k=\hat A$
+	
+	$\hat A$, ensemble des points qui sont dans une infinité de $\{A_n\}$ supposons que $\pro(\hat A)=0$ <=> presque tous les points seront dans un nombrable $\lim$ des $\{A_n\}$.
+	
+	Si $∑_{n=1}^∞\pro(A_n)<∞$ alors $\pro(\hat A)=0$.
+\end{lemme}
+\begin{proof}
+	$\pro(\hat A)=\pro(\cap_{n≥1}\cup_{k≥m}A_k)≤\pro(\cup_{k≥n}A_k)≤∑_{k=n}^∞\pro(A_k$) Reste d'une série convergente. $=0$
+\end{proof}
+
+\begin{theorem}
+	La convergence PP-entière la convergence en probabilité. En effet nous allons montrer que si $\{X_n\}_{n≥1}$ est une suite des v.a. qui converge ver $0$ PP alors on a : la suite $Y_n=\sup_{k≥n}|X_k|$ converge vers $0$ en probabilité.   
+\end{theorem}
+\begin{proof}
+	$\cup_{k≥m}E_n(ε)\overset{?}{=}\{\sup_{k≥n}|X_k|>ε\}$.
+	Pourquoi? $\cup_{k≥n}E_k(ε)=\cup_{k≥n}\{|X_k|>ε\}$.
+	\begin{itemize}
+		\item ere partie. $\cup_{k≥n}E_k(ε)\subset\{\sup_{k≥n}|X_k|>ε\}$? Car $\cup_{k≥n}E_k(ε)\supset\{|X_k|>ε\} \forall k$ donc pour le $\sup$ d'où le resutate.
+		\item ere partie.$\cup_{k≥n}E_n(ε)\supset\{\sup|X_k|>ε\}$
+		=> si $ω\in\cup_{k≥n}E_k(ε)$ <=> $|X_l(ε)|>ε \forall l≥n$ aussi $\sup_{l≥m}|X_l(ω)|>ε$.
+		$\pro(\cap_{n≥1}\cup_{k≥n}E_k(ε))$. D'un coté cette probabilité est zéro. Car $\pro(E(ε))=0$. D'autre coté cette quantité est égale à $\lim_{n\to∞}\pro(\cup_{k≥n}E_k(ε))=\lim_{n\to∞}\pro(\sup_{k>n}|X_k|>ε)$.
+	\end{itemize}
+	Donc $\lim_{n\to∞}\pro(\sup_{k>n}|X_k|>1)=0$.
+\end{proof}
+
+\begin{proposition}
+	Soit $X_n\toP X$; alors il existe une sous suite $\{n_k\}_{k≥1}$ telle que $X_{n_k}\toPP X$.
+\end{proposition}
+\begin{proof}
+	Fixons $s>0$ et $\{η_k\}^∞_{k=1}$ une suite de nombres positifs tq:
+	\begin{enumerate}
+		\item $∑_{k=1}^∞η_k<∞$
+		\item $\pro(|X_{η_k}|>ε)<η_k$
+	\end{enumerate}
+	$\sup_{k≥n}\{|X_k|>ε\}=\cup_{k≥n}E_k(ε)$
+	$\pro(\sup|X_{n_k}|>ε)=\pro(\cup_{k≥l}\{|X_{n_k}|>ε\}\overset{?}{\to}0,\ k\to ∞$.
+	Oui. $\pro(\sup|X_{n_k}|>ε)=\pro(\cup_{k≥l}\{|X_{n_k}|>ε\}≤∑_{k≥l}\pro(\{|X_{n_k}|>ε\})≤∑_{k≥l}η_k\to 0$.
+\end{proof}
+
+% subsection subsection_name (end)
 % section convergence_de_variables_aleatoires (end)
 
