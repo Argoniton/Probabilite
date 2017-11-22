@@ -1166,3 +1166,183 @@ $E(ε)=\lim\sup_{n\to∞}E_n(ε)=\cup_{n≥1}\cap_{k≥n}E_k(ε)$.
 % subsection subsection_name (end)
 % section convergence_de_variables_aleatoires (end)
 
+\chapter{Loi des grands nombres} % (fold)
+\label{cha:loi_des_grands_nombres}
+\begin{problem}
+	On a une suite de v.a. $\{X_n\}_{n≥1}$ définir sur $(Ω,\mathcal{A},\pro)$ On construit la moyenne arythmique:
+	$$\frac1n∑_{k=1}^nX_n $$
+	et on se pose la question de la convergence. Elle converge vers quoi?
+	Cas particulier. Supposons que $\forall n≥1 \E(X_n)=0$ $\frac1n∑_{k=1}^nX_k\overset{\overset{?}{n\to∞}}{\to}$. Si $n$ est fini $\frac 1n∑_{k=1}^n X_n=0$.
+\end{problem}
+
+\section{Théorèmes Limites} % (fold)
+\label{sec:theoremes_limites}
+Il y a un certain nombre de résultats.
+\begin{proposition}
+	Soit $\{x_n\}_{n≥1}$ une suite de v.a. de lasse $L^2(\pro)$, 2-à-2 non corrélés et centrées ($X_n$ signifie plutôt $X_n-\E(X_n)$) et telle que $\V(X_n)=σ_n^2<∞$ et:
+	$\lim_{n\to ∞}\frac 1{n^2}∑_{k=1}^nσ_k^2\to 0, n\to +∞$.
+	Alors $\tilde X_n=X_n-\E(X_n). \frac 1n∑_{k=1}^n\tilde X_n\overset{\pro}{\to}0$. En réalité on étudie $\frac 1n∑_{k=1}^n[X_n-\E(X_n)]$.
+\end{proposition}
+\begin{proof}
+	Pour $n$ fixée: $\V(X)=\E(X^2)-(\E(X))^2$, $\V(cX)=c^2\V(X)$.
+	$\V(X)=\E(X^2)-(\E(X))^2$, $\V(cX)=c^2\V(X)$
+	
+	
+	On avait montré que si $\{X_n\}_{n≥1}$ de v.a. 2-à-2 non corrélées 
+	$\V(∑_{k=1}^nX_k)=∑_{k=1}^n\V(X_k)=$
+	
+	Non-corrélées (2-à-2) $\underbrace{\E(X_iX_j)-\E(X_i)\E(X_j)}_{\cov{X_i,X_j}}=0$
+	$\V(X_1+X_2+X_3)$ => $\E((X_1+X_2+X_3)^2)$
+	
+	 $=\frac{1}{n^2}\V(∑_{k=1}^n\tilde X_k)=\frac 1{n^2}∑_{k=1}^n\V(\tilde X_k)=\frac 1{n^2}∑_{k=1}^n\V(X_k)=\frac 1{n^2}∑_{k=1}^nσ_k^2$.
+	 
+	 On écrit ce qu'on veut: $\forall ε>0$
+	 $\underbrace{\pro(|\frac 1n∑_{k=1}^n\tilde X_k|≥ε)}_{\frac 1{ε^2}\E(|\frac 1n∑_{k=1}^n\tilde X_k|^2)=\frac{1}{ε^2}\frac1{n^2}∑_{k=1}^nσ_k^2\to 0, \text{ par hypothèse}}\to 0, n\to ∞$.
+\end{proof}
+
+\begin{proposition}
+	Soit $\{X_n\}$ une suite de v.a. de classe $L^p(\pro)$, 2-à-2 non corrélées; posons $μ_n=\E(X_n)$ et supposons que $\frac1n∑_{k=1}^nμ_k\toμ$; en plus supposons que $\frac1{n^2}∑_{k=1}^n σ_k^2\to 0$, où $σ_k^2=\V(X_k)$:
+	Alors : $\pro(|\frac 1n∑_{k=1}^nX_k -μ|≥ε)\to 0, n\to ∞$.
+\end{proposition}
+\begin{proof}
+	On observe que:
+	$\frac 1n∑_{k=1}^n(X_k-μ_k)=\frac 1n∑_{k=1}^nX_k-\frac 1n∑_{k=1}^nμ_k$
+	$\underbrace{\frac 1n∑_{k=1}^n\tilde X_k}_{\to 0}=\frac 1n∑_{k=1}^nX_k-\underbrace{\frac 1n∑_{k=1}^nμ_k}_{\to μ}$.
+
+\end{proof}
+\begin{corollary}
+	Dans le cas précédant, prenons les variables 2-à-2 non corrélées mais avec la même loi.
+	
+	Considérons la quantité $\frac 1{n^2}∑_{k=1}^n\V(X_k)=\frac 1{n^2}∑_{k=1}^nσ_k^2=\frac 1{n^2}σ^2n\to 0$
+	
+	Si on appelle $σ^2=\V(X_k)$, $\forall k≥1$. $σ^2<∞$ par hypothèse ($L^(\pro)$).
+	
+	Et aussi $\frac 1n∑_{k=1}^nμ_k=μ$, οù $μ=\E(X_k)$, $\forall k≥1$.
+\end{corollary}
+
+\begin{theorem}[Loi des grands nombre en norme $L^2$ (loi faible des grand numbers)]
+	Soit $\{X_n\}_{n≥1}$ une suite de v.a. indépendantes et de même loi de classe $L^2(\pro)$. Alors $\forall ε>0$, et en ayant notée avec $μ$ l'espérance comm, on a:
+	$\pro(|\frac 1n∑_{k=1}^nX_n-μ|≥ε)\to 0,\ n\to 0$.	
+\end{theorem}
+\begin{proof}
+	Déjà faite.
+\end{proof}
+\begin{objective}
+	Obtenir la convergence presque partout (ou presque sûre) pour la suite $\{X_n\}_{k≥1}$ de classe $L^1(\pro)$ avec v.a. indépendantes et de même loi.
+\end{objective}
+Il y a 2 parties La première partie le Th. précédent.
+\begin{theorem}[LF1](Foata-Fuchs)
+	Même énoncé sauf que on remplace $L^2$ avec $L^1$.
+\end{theorem} 
+On utilise le théorème précédent pour montrer:
+\begin{theorem}[Loi forte des grandes nombres]
+	Si $\{X_n\}_{n≥1}$ est une suite de v.a. $L^1(\pro)$ indépendantes et de même loi alors:
+	$\lim_{n\to ∞}\frac 1n∑_{k=1}^nX_k(ω)=μ$, $ω$--$\pro$ -presque partout, avec $μ=\E(X_k)$, $\forall k≥1$.
+\end{theorem}
+\begin{proof}
+	On s'appui sur le résultat suivant: On avait montrer que la suite $\{X_n\}_{n≥1}$ converge presque partout vers $0$ ssi $\forall ε>0$ $\pro(\sup_{k≥n}|X_k|>ε)\to 0$, $n\to ∞$.
+	On suppose $μ=0$ et on écrire $\frac 1n∑_{k=1}^nX_k(ω)=Y_n(ω)$; donc on veut montrer que $\forallε>0:\pro(\sup_{k≥n}|Y_k|≥ε)\to 0$. $n\to +∞.$
+	Supposons que $\forall ε>0$ $ε\pro(\sup_{k≥m}|Y_k|>ε)≤\norm{Y_k}_{L^1}$---la propriété équivalente	
+	Alors le théorème est vrai: pourquoi?
+	$\pro(\sup_{k>m}|Y_k|>ε)≤\frac 1ε\norm{Y_m}_1$
+	
+	On utilise le théorème (LF1) et on aura que $\norm{Y_m}_{L^1}\to 0, m\to ∞$.
+	
+	On va montrer la propriété équivalente. $\forall ε>0$ $ε\pro(\sup_{m≤k≤n}|Y_k|>ε)≤\norm{Y_m}_{L^1}$.
+	$A = \{ω: \sup_{m≤k≤n}|Y_k(ω)|>ε\}=\cup_{m≤k≤n}\{ω:\sup_{m≤l≤n}(|Y_l(ω)|>ε)=k\}$
+	
+	$ε\pro(A)=ε∑_{k=m}^n\pro(A_k)$
+\end{proof}
+
+On a une espace de probabilité $(Ω,\mathcal{A},\pro)$ sur $Ω$ on définit des v.a. à valeurs dans $\R^d$,$ d≥1$.
+Ex $d=2$, $X:Ω->\R^2$ $X=(X_1,X_2)$, $X(ω)=(X_1(ω),X_2(ω))$ la loi est définit sur $\R^d$.
+
+\begin{itemize}
+	\item Sur $\R^d$ on introduit l'ensemble $M$ des mesure positives bornées.
+	\item On appelle $M_b$ l'ensemble des mesures telles que $μ(\R^d)≤b$.
+	\item en particulier les mesure de probabilité sont un sous-ensemble de $M_1$.
+	\item Dans la suite on dénotera avec $M_1$ les mesures de probabilité.
+\end{itemize}
+
+On va caractériser les fonctions continues définies sur $\R^d$ en trois classes.
+
+\begin{enumerate}
+	\item $C_k(\R^d)$ fonctions réelles (à valeurs dans $\R$). Continues à \texttt{support compact}.
+	\item $C_0(\R^d)$ fonctions réelles qui s'annulent à l'infini.
+	\item $C_b(\R^d)$ fonctions réelles bornées.
+\end{enumerate}
+
+\begin{itemize}
+	\item support de $f$
+	$\supp f=\overline{\{x\in\R^d,\ f(x)≠0\}}$
+	\item qui s'annulent à l'infini.
+	$\forall ε>0$ $\exists$ compact $K_ε$ tel que $|f(x)|<ε X\in K_ε^c $
+\end{itemize}
+
+\begin{remark}
+	$C_k(\R^d)\subset C_0(\R^d)\subset C_b(\R^d)$.
+\end{remark}
+Prochaine étape: mettre une topologie sur $M$, $M_b$, $M_1$ à l'aide de cas classes de fonctions.
+
+Sur $M$ (mesure positives bornées) On introduit trois topologies, comme les topologies les moins fixes rendant continues les applications $μ|->∫_\R^df\dd{μ}$ avec $f$ dans $C_k(\R^d)$, $C_0(\R^d)$, $C_b(\R^d) $
+
+\begin{remark}
+	On peut associer une métrique à cette topologie.
+\end{remark}
+\begin{question}
+	Soit $\{μ_n\}_{n≥1}$ une suite de mesures dans $M$ . Il faut définir ce que signifie convergence de la suite vers une mesure $ν\in M$.
+\end{question}
+Il y aura $3$ façons différentes de définit la convergence.
+
+\begin{proposition}
+	Selon les topologies introduites comparant, on a:
+	\begin{enumerate}
+		\item la suite $μ_n$ converge \texttt{vaugement} vers $μ\in M$ si
+		$\lim_{n\to ∞}=∫f\dd{μ_1}$, $\forall f\in C_k(\R^d)$.
+		\item $μ_n$ converge \texttt{faiblement} vers $μ\in M$ si
+		$\lim_{n\to ∞}∫f\dd{μ_n} =∫f\dd{μ_1}$, $f\in C_0(\R^d)$
+		\item $μ_n$ converge \texttt{étroitement} vers $μ\in M$ si
+		$\lim_{n\to∞}∫f\dd{μ_n}=∫f\dd{μ_1}$, $f\in C_b(\R^d)$
+	\end{enumerate}
+\end{proposition}
+\begin{remark}
+	Si $μ_n$ converge étroitement => faiblement => vaguement
+\end{remark}
+\begin{exercise}
+	Prenons les mesures de probabilité $M_1$, montrons que on peut avoir une suite qui converge faiblement mais pas étroitement.
+\end{exercise}
+\begin{exercise}
+	$X\in\R^d$, $X≠0$
+	La suite $μ_n=δ_{\{nx\}}$
+	Montrer que $μ_n\overset{\text{faible}}{\to}μ=0$. Montrer que $μ_n$ ne converge pas vers $0=μ_0$ étroitement.
+	\textbf{Solution.}
+	$\forall f\in C_0(\R^d) ∫f\dd{δ_{\{nx\}}}=f(nx)$
+	$\lim_{n\to ∞}∫f\dd{δ_{\{nx\}}}=\lim_{n\to ∞}f(nx)=0=∫f\dd{μ_0}$
+	Il suffit de trouver une fonction test $g$ telle que
+	$∫g\dd{δ_{\{nx\}}}\not\to 0$, $g$ bornée
+	$g(nx)\not\to 0$.
+\end{exercise}
+\begin{remark}
+	$M^1$ n'est pas faiblement fermé: c'est-à dire une limite faible de mesures des probabilité n'est pas forcement une probabilité.
+\end{remark}
+Les topologies ont été introduits sur $M$. Mois nous avons autres espaces.
+$M_b$, $M_1$, qui sont eux mêmes des espaces topologique.
+
+% section theoremes_limites (end)% chapter loi_des_grands_nombres (end)
+\section{Ensemble total} % (fold)
+\label{sec:ensemble_total}
+Soit $E$ un espace vectoriel normé, on dira que $H$ est un sous-ensemble total de $E$ si l'ensemble des combinaison linéaire fini d'élément de $H$ est dense dans $E$.
+
+Topologies sur $M_b$ et $M_1$. Il s'agit des topologies moins fixes qui rendent continues les applications.
+
+Vague: $μ|->∫f\dd{μ_1}$, $f\in$ ensemble total dans $C_k(\R^d)$
+Faible: $μ|->∫f\dd{μ_1}$, $f\in$ ensemble total dans $C_0(\R^d)$
+
+\begin{theorem}
+	\begin{enumerate}[(i)]
+		\item Sur $M^1$ les trois topologies coïncident.
+		\item L'espace $M_b$ est compact pour la topologie faible.
+	\end{enumerate}
+	$M_b$, $μ(\R^d)≤b$.
+\end{theorem}
+% section ensemble_total (end)
